@@ -2,6 +2,176 @@
 ---
 
 <section>
-	<h1>mindcare</h1>
+	<div  class="contanier_heading"  >
+		<div>
+			<div>
+				<h3>centro</h3>
+			</div>
+			<div>
+				<div>
+				
+				</div>
+				<div class="box_heading"  >
+					<div>
+						<img
+							class="image1" 
+							src='image/mindcare.webp' 
+							alt="mindcare image"
+						>
+					</div>
+					<div class="heading" >
+						<div class="box_tittle" >
+							<h1>mindcare</h1>
+							<img
+								class="arrow_icon" 
+								src="icons/arrow.svg" 
+								alt="mindcare icon arrow"
+							>
+						</div>
+						<div class="container_subheading" >
+							<div class="box_icons" >
+								<img
+									class="image3"
+									src="image/mindcare3.webp" 
+									alt="mincare image"
+								>
+								<div class="box_icon_heard" >
+									<img 
+										class="heard_icon"
+										src="icons/heard.svg" 
+										alt="mindcare icon heard"
+									>
+								</div>
+							</div>
+							<div>
+								<h2>CUIDAMOS TU SALUD CON LOS MEJORES PROFESIONALES EN NUESTRO CENTRO MEDICO</h2>
+								<div class="box_icons_networks" >
+									<img src="icons/meta.svg" alt="">
+									<img src="icons/instagram.svg" alt="">
+									<img src="icons/whatsapp.svg" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box_image_main" >
+			<img 
+				class="image2"
+				src="image/mindcare2.webp" 
+				alt="mindcare image"
+			>
+			<img
+				class="circle_mindcare"
+				src="icons/circleMindcare.svg" 
+				alt=""
+			>
+		</div>
+	</div>
 </section>
+
+<style>
+	.contanier_heading{
+		display: flex;
+	}
+	.box_heading{
+		display: flex;
+		align-items: flex-start;
+	}
+	.heading{
+		display: flex;
+		flex-direction: column;
+		margin-left: 10px;
+		row-gap:8px;
+	}
+	.container_subheading{
+		display: flex;
+		justify-content: left;
+		gap: 25px;
+		h2{
+			width: 350px;
+			text-wrap: pretty;
+		}
+	}
+	.box_tittle{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 8px;
+		background-color: var(--rose-color-transparent);
+		padding-inline: 20px;
+		border-radius: 50px;
+	}
+	.box_icons{
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		gap: 8px;
+	}
+	.arrow_icon{
+		width: 80px;
+		height: 80px;
+	}
+	.box_icon_heard{
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: solid 4px var(--white-color);
+		background-color: var(--rose_color);
+	}
+	.heard_icon{
+		width: 50px;
+	}
+	.box_icons_networks{
+		display: flex;
+		align-items: center;
+		justify-content: left;
+		margin-top: 10px;
+		gap: 30px;
+	}
+	.image1{
+		width: 120px;
+		border-radius: 70px;
+		border: solid 4px var(--white-color);
+	}
+	.image2{
+		position: relative;
+		z-index: -1;
+		border-radius: 100px;
+		border: solid 4px var(--white-color);
+		margin-top: -100px;
+		margin-left: -80px;
+		width: 230px;
+	}
+	.image3{
+		width: 80px;
+		height: 80px;
+		border-radius: 50%;
+		border: solid 4px var(--white-color);
+	}
+	.box_image_main{
+		display: flex;
+		align-items: flex-start;
+	}
+	.circle_mindcare{
+		z-index: -2;
+		position: relative;
+		width: 150px;
+		margin-top: -120px;
+		margin-left: -90px;
+		animation: rotation_circle 50s linear infinite;
+	}
+	@keyframes rotation_circle {
+		from{
+			transform: rotate(0deg);
+		}
+		to{
+			transform: rotate(360deg);
+		}
+	}
+</style>
 

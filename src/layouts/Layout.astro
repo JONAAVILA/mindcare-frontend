@@ -14,10 +14,12 @@
 
 <style is:global >
 	@font-face {
-		font-family: 'Raleway';
+		font-family: 'Raleway-Medium';
 		src: url('../assets/fonts/Raleway-Medium.ttf') format('truetype');
-		font-weight: 500;
-		font-style: normal;
+	}
+	@font-face {
+		font-family: 'Raleway-MediumItalic';
+		src: url('../assets/fonts/Raleway-MediumItalic.ttf') format('truetype');
 	}
 	@font-face {
 		font-family: 'Raleway-SemiBold';
@@ -26,8 +28,11 @@
 	:root{
 		--primary-color:#F7F7F7;
 		--secundary-color:#272727;
-		--third-color:#C0DDEF;
-		--fouth-color:#636363;
+		--rose_color:#D9D9D9;
+		--rose-color-transparent:#D9D9D970;
+		--blue-color:#C0DDEF;
+		--grey-color:#636363;
+		--white-color:#FFFFFF;
 
 		display: grid;
 		align-items: center;
@@ -37,7 +42,7 @@
 		height: 100vh;
 	}
 	body {
-		font-family: 'Relaway', sans-serif;
+		font-family: 'Raleway-Medium', sans-serif;
 		color: var(--secundary-color);
 		background: radial-gradient(ellipse at center,#C0DDEF,#F7F7F7);
 		background-repeat: no-repeat;
@@ -45,5 +50,17 @@
 	h1{
 		font-family: 'Raleway-SemiBold', sans-serif;
 		font-size: 8rem;
+		line-height: 1;
+		margin: 0;
+	}
+	h2{
+		font-size: 10px;
+		font-weight: 400;
+	}
+	h3{
+		font-family: 'Raleway-MediumItalic', sans-serif;
+		font-weight: 500;
+		font-size: 4.5rem;
+		margin: 0;
 	}
 </style>
