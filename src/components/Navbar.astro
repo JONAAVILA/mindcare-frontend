@@ -22,8 +22,43 @@
         border-bottom: solid 1px var(--grey-color);
         gap: 50px;
     }
+    a{
+        position: relative;
+        transition: all ease-in-out 200ms;
+    }
+    a:hover::before{
+        position: absolute;
+        content: " ";
+        width: 80px;
+        height: 30px;
+        left: -50%;
+        top: -50%;
+        transform-origin: center;
+        transform: translate(50%,50%);
+        border: solid 1px var(--grey-color);
+        border-radius: 50%;
+        animation: rotate 200ms forwards;
+    }
     .scrolled{
         background: var(--primary-color);
         transition: all ease-in-out 200ms;
+    }
+
+    @keyframes rotate {
+        0%{
+            opacity: 0;
+            transform: rotate(0deg);
+        }
+        10%{
+            opacity: 0.5;  
+        }
+        70%{
+            opacity: 0.5;  
+            transform: rotate(-35deg);
+        }
+        100%{
+            transform: rotate(-35deg);
+            opacity: 1;
+        }
     }
 </style>
