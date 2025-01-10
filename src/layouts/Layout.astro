@@ -2,6 +2,18 @@
 import Navbar from "../components/Navbar.astro";
 ---
 
+<script>
+	const navbar = document.getElementById('navbar')
+
+	window.addEventListener('scroll',()=>{
+		if(window.scrollY > 100){
+			navbar?.classList.add('scrolled')
+		}else {
+			navbar?.classList.remove('scrolled')
+		}
+	})
+</script>
+
 <!doctype html>
 <html lang="en">
 	<head>
