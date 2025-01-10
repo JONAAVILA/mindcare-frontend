@@ -3,10 +3,13 @@
 
 <section>
     <div>
-        <div>
-            <div>
+        <div class="info_suscribe_container" >
+            <div class="inf_suscribe_box" >
                 <h3>suscribite</h3>
-                <input type="text">
+                <input
+                    type="text"
+                    placeholder="EMAIL"
+                >
             </div>
             <p>DEJANOS TU EMAIL PARA RECIBIR INFORMACION SOBRE NUESTROS SERVICIOS, ES GRATIS!</p>
         </div>
@@ -29,9 +32,27 @@
 
 <style>
     section{
-        background-color: transparent;
+        display: grid;
+        align-items: center;
+        justify-content: center;
     }
-    div{
-        background-color: transparent;
+    input{
+        margin-bottom: 8px;
+    }
+    .info_suscribe_container{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 15px;
+        p{
+            width: 200px;
+            text-wrap: balance;
+        }
+    }
+    .inf_suscribe_box{
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 15px;
     }
 </style>
