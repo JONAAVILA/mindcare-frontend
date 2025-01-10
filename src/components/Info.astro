@@ -2,30 +2,30 @@
 ---
 
 <section>
-    <div>
-        <div class="info_suscribe_container" >
-            <div class="inf_suscribe_box" >
+    <div class="info_container" >
+        <div class="info_aling" >
+            <div class="info_aling info_box_text" >
                 <h3>suscribite</h3>
                 <input
                     type="text"
                     placeholder="EMAIL"
                 >
             </div>
-            <p>DEJANOS TU EMAIL PARA RECIBIR INFORMACION SOBRE NUESTROS SERVICIOS, ES GRATIS!</p>
+            <p class="info_text" >DEJANOS TU EMAIL PARA RECIBIR INFORMACION SOBRE NUESTROS SERVICIOS, ES GRATIS!</p>
         </div>
-        <div>
-            <p>MIRA NUESTRA CARTILLA DE PROFESIONALES</p>
-            <div>
+        <div class="info_aling" >
+            <p class="info_text text_rigth" >MIRA NUESTRA CARTILLA DE PROFESIONALES</p>
+            <div class="info_aling info_box_text" >
                 <img src="image/mindcare3.webp" alt="">
                 <h3>nuestros doctores</h3>
             </div>
         </div>
-        <div>
-            <div>
+        <div class="info_aling" >
+            <div class="info_aling info_box_text" >
                 <h3>mirá nuestro blog</h3>
                 <img src="image/mindcare3.webp" alt="">
             </div>
-            <p>MANTENETE ACTUALIZADO CON LAS NOTICIAS E INFORMACIÓN SOBRE EL BIENESTAR MENTAL</p>
+            <p class="info_text" >MANTENETE ACTUALIZADO CON LAS NOTICIAS E INFORMACIÓN SOBRE EL BIENESTAR MENTAL</p>
         </div>
     </div>
 </section>
@@ -35,24 +35,35 @@
         display: grid;
         align-items: center;
         justify-content: center;
+        height: 100vh;
+
     }
-    input{
-        margin-bottom: 8px;
+    img{
+        width: 200px;
+        height: 60px;
+        border-radius: 150px;
+        object-fit: cover;
     }
-    .info_suscribe_container{
+    .info_container{
+        display: grid;
+        gap: 20px;
+    }
+    .info_aling{
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         justify-content: center;
         gap: 15px;
-        p{
-            width: 200px;
-            text-wrap: balance;
-        }
     }
-    .inf_suscribe_box{
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        gap: 15px;
+    .info_box_text{
+        padding: 12px 16px;
+        border-radius: 50px;
+        background-color: var(--primary-color);
+    }
+    .info_text{
+        width: 200px;
+        text-wrap: balance;
+    }
+    .text_rigth{
+        text-align: right;
     }
 </style>
