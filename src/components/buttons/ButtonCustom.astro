@@ -13,18 +13,35 @@ const { path } = Astro.props
         justify-content: center;
         width: 60px;
         position: relative;
-        transition: all ease-in-out 200ms;
     }
     a:hover::after{
         position: absolute;
         content: " ";
         width: 80px;
-        height: 30px;
+        height: 35px;
         left: -20%;
-        top: -60%;
+        top: -100%;
         border: solid 1px var(--grey-color);
         border-radius: 50%;
         animation: rotate 300ms forwards;
         transform-origin: center;
+    }
+    
+    @keyframes rotate {
+        0%{
+            opacity: 0;
+            transform: rotate(0deg);
+        }
+        10%{
+            opacity: 0.5;  
+        }
+        70%{
+            opacity: 0.5;  
+            transform: rotate(-35deg);
+        }
+        100%{
+            transform: rotate(-35deg);
+            opacity: 1;
+        }
     }
 </style>
