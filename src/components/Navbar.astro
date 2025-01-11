@@ -1,11 +1,20 @@
 ---
+import ButtonCustom from "./buttons/ButtonCustom.astro";
 ---
 
 <aside id="navbar" >
-    <a href="/contacto">CONTACTO</a>
-    <a href="/about">ABOUT</a>
-    <a href="/doctores">DOCTORES</a>
-    <a href="/blog">BLOG</a>
+    <ButtonCustom path="/contacto">
+        CONTACTO
+    </ButtonCustom>
+    <ButtonCustom path="/about">
+        ABOUT
+    </ButtonCustom>
+    <ButtonCustom path="/doctores">
+        DOCTORES
+    </ButtonCustom>
+    <ButtonCustom path="/blog">
+        BLOG
+    </ButtonCustom>
 </aside>
 
 <style>
@@ -21,26 +30,6 @@
         justify-content: center;
         border-bottom: solid 1px var(--grey-color);
         gap: 30px;
-    }
-    a{  
-        display: grid;
-        align-items: center;
-        justify-content: center;
-        width: 60px;
-        position: relative;
-        transition: all ease-in-out 200ms;
-    }
-    a:hover::after{
-        position: absolute;
-        content: " ";
-        width: 80px;
-        height: 30px;
-        left: -20%;
-        top: -60%;
-        border: solid 1px var(--grey-color);
-        border-radius: 50%;
-        animation: rotate 300ms forwards;
-        transform-origin: center;
     }
     .scrolled{
         background: var(--primary-color);

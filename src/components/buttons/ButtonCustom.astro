@@ -1,0 +1,30 @@
+---
+const { path } = Astro.props
+---
+
+<a href={path}>
+    <slot/>
+</a>
+
+<style>
+    a{  
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        position: relative;
+        transition: all ease-in-out 200ms;
+    }
+    a:hover::after{
+        position: absolute;
+        content: " ";
+        width: 80px;
+        height: 30px;
+        left: -20%;
+        top: -60%;
+        border: solid 1px var(--grey-color);
+        border-radius: 50%;
+        animation: rotate 300ms forwards;
+        transform-origin: center;
+    }
+</style>
