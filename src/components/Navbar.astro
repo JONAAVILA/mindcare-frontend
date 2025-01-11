@@ -20,24 +20,27 @@
         align-items: center;
         justify-content: center;
         border-bottom: solid 1px var(--grey-color);
-        gap: 50px;
+        gap: 30px;
     }
-    a{
+    a{  
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
         position: relative;
         transition: all ease-in-out 200ms;
     }
-    a:hover::before{
+    a:hover::after{
         position: absolute;
         content: " ";
         width: 80px;
         height: 30px;
-        left: -50%;
-        top: -50%;
-        transform-origin: center;
-        transform: translate(50%,50%);
+        left: -20%;
+        top: -60%;
         border: solid 1px var(--grey-color);
         border-radius: 50%;
-        animation: rotate 200ms forwards;
+        animation: rotate 300ms forwards;
+        transform-origin: center;
     }
     .scrolled{
         background: var(--primary-color);
