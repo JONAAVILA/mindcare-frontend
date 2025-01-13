@@ -1,4 +1,7 @@
 ---
+import WhatsappButton from "./buttons/WhatsappButton.astro";
+import InstagramButton from "./buttons/InstagramButton.astro";
+import MetaButton from "./buttons/MetaButton.astro";
 ---
 
 <section>
@@ -16,7 +19,7 @@
 						<img
 							class="image1" 
 							src='image/mindcare.webp' 
-							alt="mindcare image"
+							alt=""
 						>
 					</div>
 					<div class="heading" >
@@ -44,11 +47,11 @@
 								</div>
 							</div>
 							<div>
-								<h2>CUIDAMOS TU SALUD CON LOS MEJORES PROFESIONALES EN NUESTRO CENTRO MEDICO</h2>
+								<h2>EN MINDCARE TE CONECTAMOS CON EL PREFESIONAL IDEAL QUE MÁS SE ADAPTE A TUS NECESIDADES</h2>
 								<div class="box_icons_networks" >
-									<img src="icons/meta.svg" alt="">
-									<img src="icons/instagram.svg" alt="">
-									<img src="icons/whatsapp.svg" alt="">
+									<MetaButton/>
+									<InstagramButton/>
+									<WhatsappButton/>
 								</div>
 							</div>
 						</div>
