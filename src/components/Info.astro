@@ -22,12 +22,16 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
             <p class="info_text text_rigth" >MIRA NUESTRA CARTILLA DE PROFESIONALES</p>
             <div class="info_aling info_box_text" >
                 <img src="image/mindcare3.webp" alt="">
-                <h3>nuestros doctores</h3>
+                <a href="/doctores">
+                    <h3>nuestros doctores</h3>
+                </a>
             </div>
         </div>
         <div class="info_aling" >
             <div class="info_aling info_box_text" >
-                <h3>mirá nuestro blog</h3>
+                <a href="/blog">
+                    <h3>mirá nuestro blog</h3>
+                </a>
                 <img src="image/mindcare3.webp" alt="">
             </div>
             <p class="info_text" >MANTENETE ACTUALIZADO CON LAS NOTICIAS E INFORMACIÓN SOBRE EL BIENESTAR MENTAL</p>
@@ -41,6 +45,9 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
         align-items: center;
         justify-content: center;
         margin-bottom: 100px;
+    }
+    a:hover{
+        color: var(--grey-color);
     }
     img{
         width: 200px;
