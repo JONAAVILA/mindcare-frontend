@@ -21,7 +21,7 @@ const Login = ()=>{
                 <Link to={'/dashboard'} >
                     <h2>INGRESO</h2>
                 </Link>
-                <h3 className="login_heading" >ADMIN</h3>
+                <h3 className="login_heading" >Admin</h3>
             </div>
             <form
                 onSubmit={formik.handleSubmit}

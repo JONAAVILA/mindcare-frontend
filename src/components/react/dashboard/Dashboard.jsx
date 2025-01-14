@@ -1,10 +1,23 @@
+import { useFormik } from 'formik'
 import './dashboard.css'
 
 const Dashboard = ()=>{
+
+    const formik = useFormik({
+        initialValues:{
+            idAdmin:'',
+            tittle:'',
+            description:'',
+            image:'',
+        },
+        validationSchema:'',
+        onSubmit:''
+    })
+
     return(
         <section>
-            <div>
-                <h3>PUBLICAR EN BLOG</h3>
+            <div className='dashboard_box_inputs' >
+                <h3>Publicar en blog</h3>
             </div>
             <div></div>
         </section>

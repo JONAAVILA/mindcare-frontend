@@ -21,7 +21,7 @@ const Signin = ()=>{
         <div>
             <div className='admin_signin_box_heading' >
                 <h2>registro</h2>
-                <h3 className='admin_signin_heading' >ADMIN</h3>
+                <h3 className='admin_signin_heading' >Admin</h3>
             </div>
             <form
                 onSubmit={formik.handleSubmit}
