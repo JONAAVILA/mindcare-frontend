@@ -1,9 +1,9 @@
 import './buttonReact.css'
 
-const ButtonReact = ()=>{
+const ButtonReact = ({children})=>{
     return(
         <button className='button_react' >
-            ENVIAR
+            {children}
         </button>
     )
 }

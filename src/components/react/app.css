@@ -4,16 +4,17 @@
 }
 @font-face {
     font-family: 'Raleway-MediumItalic';
-    src: url('../assets/fonts/Raleway-MediumItalic.ttf') format('truetype');
+    src: url('../../assets/fonts/Raleway-MediumItalic.ttf') format('truetype');
 }
 @font-face {
     font-family: 'Raleway-SemiBold';
-    src: url('../assets/fonts/Raleway-SemiBold.ttf') format('truetype');
+    src: url('../../assets/fonts/Raleway-SemiBold.ttf') format('truetype');
 }
 :root{	
     --primary-color:#F7F7F7;
     --secundary-color:#272727;
     --rose_color:#D9D9D9;
+    --red:#cf4343;
     --rose-color-transparent:#D9D9D970;
     --blue-color:#C0DDEF;
     --grey-color:#636363;
@@ -67,6 +68,7 @@ button{
     width: 60px;
     height: 10px;
     color: var(--secundary-color);
+    cursor: pointer;
 }
 input{
     outline: none;

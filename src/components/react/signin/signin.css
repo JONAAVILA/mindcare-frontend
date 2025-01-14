@@ -1,29 +1,20 @@
-.login_container{
+.admin_create_form{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.admin_signin_box_heading{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    gap: 15px;
+    margin-bottom: 15px;
 }
-.login_heading{
+.admin_signin_heading{
     font-size: 2rem;
 }
-.login_form{
-    display: grid;
-    gap: 15px;
-}
-.login_box_inputs{
-    display: grid;
-}
-.login_box_button{
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 10px;
-}
-.box_login_admin_errors{
+.box_signin_admin_errors{
     display: flex;
     align-items: center;
     justify-content: left;
@@ -35,4 +26,10 @@
         color: var(--red);
         padding-left: 12px;
     }
+}
+.admin_signin_button_box{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
