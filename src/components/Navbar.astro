@@ -23,16 +23,26 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
         top: 0px;
         left: 50%;
         width: 100%;
-        height: 70px;
+        padding: 30px;
         transform: translateX(-50%);
         display: flex;
         align-items: center;
         justify-content: center;
         border-bottom: solid 1px var(--grey-color);
         gap: 30px;
+        transition: all ease 200ms;
+    }
+    aside:hover{
+        background-color: var(--primary-color);
     }
     .scrolled{
         background: var(--primary-color);
-        transition: all ease-in-out 200ms;
     }
+
+    @media
+        (width < 700px){
+            aside{
+                flex-direction: column;
+            }
+        }
 </style>
