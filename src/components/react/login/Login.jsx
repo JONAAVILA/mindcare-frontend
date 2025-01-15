@@ -3,8 +3,14 @@ import './login.css'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import { Link, useNavigate } from 'react-router-dom'
 import { validateLogin } from '../../../../utils/validate'
+import setStorage from '../../../../utils/setStorage'
+import sendCode from '../../adapters/sendCode'
+import adminLogin from '../../adapters/adminLogin'
+import { useState } from 'react'
+import ValidateCode from '../modals/validateCode/ValidateCode'
 
-const Login = ()=>{
+const Login = ({prod,urlAdminLoginProd,urlAdminLoginDev,urlSendCodeProd,urlSendCodeDev,urlCheckCodeProd,urlCheckCodeDev})=>{
+    const [modal, setModal] = useState(false)
     const navigate = useNavigate()
 
     const formik = useFormik({
@@ -14,19 +20,17 @@ const Login = ()=>{
         },
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
-            handleLoader()
-
-            const res = await adminLogin(values)
+            
+            const res = await adminLogin(values,prod,urlAdminLoginProd,urlAdminLoginDev)
             console.log('seller',res)
             if(res.name){
                 setStorage(res)
-                updateUser(res)
                 navigate('/dashboard')
                 return
             }
 
             if(res === 'validate user'){
-                const codeRes = await sendCode()
+                const codeRes = await sendCode(prod,urlSendCodeProd,urlSendCodeDev)
                 if(codeRes.error) {
                     setalert(codeRes.error)
                     return
@@ -36,13 +40,17 @@ const Login = ()=>{
             }
 
             setalert('Clave o correo incorrecto')
-            handleLoader()
             return
         }
     })
 
+    const handleModal = ()=>{
+        setModal(!modal)
+    }
+
     return(
         <div className='login_container' >
+            {modal && <ValidateCode handleModal={handleModal} email={formik.values.email} prod={prod} urlCheckCodeProd={urlCheckCodeProd} urlCheckCodeDev={urlCheckCodeDev} />}
             <div>
                 <Link to={'/signin'} >
                     <h2>INGRESO</h2>

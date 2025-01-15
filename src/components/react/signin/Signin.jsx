@@ -4,7 +4,7 @@ import { useState } from 'react'
 import postAdmin from '../../adapters/postAdmin'
 import setStorage from '../../../../utils/setStorage'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
-import Alert from '../modals/Alert'
+import Alert from '../modals/alert/Alert'
 import './signin.css'
 import { useNavigate } from 'react-router-dom'
 

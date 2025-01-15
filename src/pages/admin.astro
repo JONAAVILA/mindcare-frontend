@@ -2,21 +2,30 @@
 import App from "../components/react/App";
 
 const VITE_PRODUCTION = import.meta.env.VITE_PRODUCTION
-const VITE_URL_ADMIN_SIGNIN_DEV = import.meta.env.VITE_URL_ADMIN_SIGNIN_DEV
+const VITE_URL_SEND_CODE_PROD = import.meta.env.VITE_URL_SEND_CODE_PROD
+const VITE_URL_CHECK_CODE_PROD = import.meta.env.VITE_URL_CHECK_CODE_PROD
+const VITE_URL_ADMIN_LOGIN_PROD = import.meta.env.VITE_URL_ADMIN_LOGIN_PROD
 const VITE_URL_ADMIN_SIGNIN_PROD = import.meta.env.VITE_URL_ADMIN_SIGNIN_PROD
 
+const VITE_URL_SEND_CODE_DEV = import.meta.env.VITE_URL_SEND_CODE_DEV
+const VITE_URL_CHECK_CODE_DEV = import.meta.env.VITE_URL_CHECK_CODE_DEV
 const VITE_URL_ADMIN_LOGIN_DEV = import.meta.env.VITE_URL_ADMIN_LOGIN_DEV
-const VITE_URL_ADMIN_LOGIN_PROD = import.meta.env.VITE_URL_ADMIN_LOGIN_PROD
+const VITE_URL_ADMIN_SIGNIN_DEV = import.meta.env.VITE_URL_ADMIN_SIGNIN_DEV
 ---
 
 <section>
     <App
         client:only="react" 
         prod={VITE_PRODUCTION}
-        urlAdminSigninDev={VITE_URL_ADMIN_SIGNIN_DEV}
-        urlAdminSigninProd={VITE_URL_ADMIN_SIGNIN_PROD}
-        urlAdminLoginDev={VITE_URL_ADMIN_LOGIN_DEV}
+        urlSendCodeProd={VITE_URL_SEND_CODE_PROD}
+        urlCheckCodeProd={VITE_URL_CHECK_CODE_PROD}
         urlAdminLoginProd={VITE_URL_ADMIN_LOGIN_PROD}
+        urlAdminSigninProd={VITE_URL_ADMIN_SIGNIN_PROD}
+
+        urlSendCodeDev={VITE_URL_SEND_CODE_DEV}
+        urlCheckCodeDev={VITE_URL_CHECK_CODE_DEV}
+        urlAdminLoginDev={VITE_URL_ADMIN_LOGIN_DEV}
+        urlAdminSigninDev={VITE_URL_ADMIN_SIGNIN_DEV}
     />
 </section>
 

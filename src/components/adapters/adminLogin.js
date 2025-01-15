@@ -1,15 +1,13 @@
 import axios from "axios"
 
-const VITE_PRODUCTION = import.meta.env.VITE_PRODUCTION
-const VITE_URL_ADMIN_LOGIN_DEV = import.meta.env.VITE_URL_ADMIN_LOGIN_DEV
-const VITE_URL_ADMIN_LOGIN_PROD = import.meta.env.VITE_URL_ADMIN_LOGIN_PROD
+export default async function adminLogin(values,prod,urlAdminLoginDev,urlAdminLoginProd){
+    
+    const URL = prod === true ? urlAdminLoginProd : urlAdminLoginDev
+    console.log('params',prod)
 
-const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_LOGIN_PROD : VITE_URL_ADMIN_LOGIN_DEV
-
-export default async function adminLogin(values){
     try {
         const admin = {
-            seller:'harmonyNatural',
+            seller:'mindcare',
             email:values.email,
             password:values.password
         }

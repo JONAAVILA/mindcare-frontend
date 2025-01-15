@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default async function postAdmin(values,prod,urlAdminSigninDev,urlAdminSigninProd){
     
-    const URL = prod === 'true' ? urlAdminSigninProd : urlAdminSigninDev
+    const URL = prod === true ? urlAdminSigninProd : urlAdminSigninDev
 
     try {
         const admin = {

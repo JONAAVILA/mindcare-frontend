@@ -1,4 +1,4 @@
-import CloseIcon from '../icons/closeIcon/CloseIcon'
+import CloseIcon from '../../icons/closeIcon/CloseIcon'
 import './alert.css'
 
 const Alert = ({children,handleAlert})=>{

@@ -40,3 +40,10 @@ export const validateLogin = Yup.object().shape({
         .matches('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#%])','Formato inválido')
         .required('La contraseña es requerida')
 })
+
+export const validateCode = Yup.object().shape({
+    code:Yup.string()
+        .min(6,'Código inválido')
+        .max(6,'Código inválido')
+        .required('Ingrese el código')
+})
