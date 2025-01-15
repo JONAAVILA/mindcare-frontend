@@ -2,8 +2,13 @@ import { useFormik } from 'formik'
 import './signin.css'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import { validateAdmin } from '../../../../utils/validate'
+import { useState } from 'react'
+import Alert from '../modals/Alert'
+import postAdmin from '../../adapters/postAdmin'
+import setStorage from '../../../../utils/setStorage'
 
-const Signin = ()=>{
+const Signin = ({prod,urlAdminSigninDev,urlAdminSigninProd})=>{
+    const [alert, setAlert] = useState('')
 
     const formik = useFormik({
         initialValues:{
@@ -14,11 +19,25 @@ const Signin = ()=>{
             password:''
         },
         validationSchema:validateAdmin,
-        onSubmit:''
+        onSubmit: async (values)=>{
+            const res = await postAdmin(values,prod,urlAdminSigninDev,urlAdminSigninProd)
+            if(res.name){
+                setAlert(`Admin ${res.name} creado con exito 🚀`)
+                setStorage(res)
+                setTimeout(()=>{
+                    navigate('/dashboard')
+                },3000)
+            }else setAlert(res)
+        }
     })
+
+    const handleAlert = ()=>{
+        setAlert('')
+    }
 
     return(
         <div>
+            {alert && <Alert handleAlert={handleAlert} >{alert}</Alert> }
             <div className='admin_signin_box_heading' >
                 <h2>registro</h2>
                 <h3 className='admin_signin_heading' >Admin</h3>
@@ -78,7 +97,7 @@ const Signin = ()=>{
                     </div>
                 </div>
                 <div className='admin_signin_button_box' >
-                    <ButtonReact>
+                    <ButtonReact type='submit' >
                         CREAR
                     </ButtonReact>
                 </div>

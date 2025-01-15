@@ -1,0 +1,13 @@
+.alert_container{
+    position: fixed;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    top: 50%;
+    width: 350px;
+    padding: 20px 50px;
+    border:solid 1px ;
+    background-color: var(--primary-color);
+    transform: translate(-50%,-50%);
+}

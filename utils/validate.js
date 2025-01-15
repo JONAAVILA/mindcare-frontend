@@ -24,6 +24,12 @@ export const validateAdmin = Yup.object().shape({
         .required('El email es requerido')
 })
 
+export const validateEmail = Yup.object().shape({
+    email:Yup.string()
+        .email('Email invalido')
+        .required('El email es requerido')
+})
+
 export const validateLogin = Yup.object().shape({
     email:Yup.string()
         .email('Email invalido')
