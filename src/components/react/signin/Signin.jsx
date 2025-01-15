@@ -1,14 +1,16 @@
-import { useFormik } from 'formik'
-import './signin.css'
-import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import { validateAdmin } from '../../../../utils/validate'
+import { useFormik } from 'formik'
 import { useState } from 'react'
-import Alert from '../modals/Alert'
 import postAdmin from '../../adapters/postAdmin'
 import setStorage from '../../../../utils/setStorage'
+import ButtonReact from '../buttons/buttonReact/ButtonReact'
+import Alert from '../modals/Alert'
+import './signin.css'
+import { useNavigate } from 'react-router-dom'
 
 const Signin = ({prod,urlAdminSigninDev,urlAdminSigninProd})=>{
     const [alert, setAlert] = useState('')
+    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues:{
@@ -26,8 +28,14 @@ const Signin = ({prod,urlAdminSigninDev,urlAdminSigninProd})=>{
                 setStorage(res)
                 setTimeout(()=>{
                     navigate('/dashboard')
+                    return
                 },3000)
-            }else setAlert(res)
+            }
+            setAlert(res)
+            setTimeout(()=>{
+                navigate('/admin')
+                return
+            },3000)
         }
     })
 

@@ -1,0 +1,10 @@
+.close_icon_react{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    stroke-width: 2px;
+    transition: all ease 200ms;
+}
+.close_icon_react:hover{
+    transform: rotate(-45deg);
+}

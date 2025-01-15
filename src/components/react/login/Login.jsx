@@ -1,10 +1,11 @@
 import { useFormik } from 'formik'
 import './login.css'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { validateLogin } from '../../../../utils/validate'
 
 const Login = ()=>{
+    const navigate = useNavigate()
 
     const formik = useFormik({
         initialValues:{
@@ -20,7 +21,7 @@ const Login = ()=>{
             if(res.name){
                 setStorage(res)
                 updateUser(res)
-                navigate('/admin')
+                navigate('/dashboard')
                 return
             }
 

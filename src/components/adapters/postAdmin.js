@@ -9,7 +9,7 @@ export default async function postAdmin(values,prod,urlAdminSigninDev,urlAdminSi
         const admin = {
             name:values.name,
             surname:values.surname,
-            seller:'harmonyNatural',
+            seller:values.seller,
             email:values.email,
             password:values.password
         }
