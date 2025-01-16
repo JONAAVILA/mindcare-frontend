@@ -7,12 +7,12 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
     const menu = document.getElementById('navbar')
 
     tab?.addEventListener('click',()=>{
-        if(menu && !menu.style.height || menu?.style.height === "200px"){
-            menu.style.height = "0px"
+        if(menu && !menu.style.height || menu?.style.height === "0px"){
+            menu.style.height = "200px"
             return
         }
-        if(menu?.style.height === "0px"){
-            menu.style.height = "200px"
+        if(menu && !menu.style.height || menu?.style.height === "200px"){
+            menu.style.height = "0px"
             return
         }
     })
@@ -35,8 +35,8 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
     </aside>
     <svg
         id="tab"
-        width="30"  
-        height="30"  
+        width="35"  
+        height="35"  
         viewBox="0 0 24 24"  
         fill="none"  
     >
@@ -84,7 +84,7 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
         (width < 700px){
             aside{
                 flex-direction: column;
-                height: 200px;
+                height: 0px;
                 width: 100%;
                 overflow: hidden;
             }
