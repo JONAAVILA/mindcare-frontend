@@ -1,7 +1,5 @@
 ---
 import ButtonCustom from "./buttons/ButtonCustom.astro";
-import Footer from "./Footer.astro";
-
 ---
 
 <section>
@@ -78,4 +76,22 @@ import Footer from "./Footer.astro";
     .text_rigth{
         text-align: right;
     }
+
+    @media
+        (width < 700px){
+            .info_container{
+                align-items: center;
+            }
+            .info_aling{
+                flex-direction: column;
+                text-align: center;
+                width: 100%;
+            }
+            .info_text{
+                text-align: center;
+            }
+            .info_box_text{
+                padding: 15px 0;
+            }
+        }
 </style>
