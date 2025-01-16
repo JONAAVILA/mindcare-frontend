@@ -2,6 +2,22 @@
 import ButtonCustom from "./buttons/ButtonCustom.astro";
 ---
 
+<script>
+    const tab = document.getElementById('tab')
+    const menu = document.getElementById('navbar')
+
+    tab?.addEventListener('click',()=>{
+        if(menu && !menu.style.height || menu?.style.height === "200px"){
+            menu.style.height = "0px"
+            return
+        }
+        if(menu?.style.height === "0px"){
+            menu.style.height = "200px"
+            return
+        }
+    })
+</script>
+
 <aside id="navbar" >
     <ButtonCustom path="/contacto">
         CONTACTO
@@ -16,14 +32,29 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
         BLOG
     </ButtonCustom>
 </aside>
+<div>
+    <svg
+        id="tab"
+        width="30"  
+        height="30"  
+        viewBox="0 0 24 24"  
+        fill="none"  
+    >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+        <path d="M4 6h16" />
+        <path d="M7 12h13" />
+        <path d="M10 18h10" />
+    </svg>
+</div>
 
 <style>
     aside{
+        z-index: 9;
         position: fixed;
         top: 0px;
         left: 50%;
         width: 100%;
-        padding: 30px;
+        height: 80px;
         transform: translateX(-50%);
         display: flex;
         align-items: center;
@@ -38,11 +69,26 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
     .scrolled{
         background: var(--primary-color);
     }
+    #tab{
+        display: none;
+    }
 
     @media
         (width < 700px){
             aside{
                 flex-direction: column;
+                height: 200px;
+                overflow: hidden;
+            }
+            #tab{
+                z-index: 10;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                cursor: pointer;
+                display: flex;
+                stroke-width: 1px;
+                stroke: var(--secundary-color);
             }
         }
 </style>
