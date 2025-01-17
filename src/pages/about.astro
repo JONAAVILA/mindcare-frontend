@@ -4,10 +4,8 @@ import Layout from "../layouts/Layout.astro"
 
 <Layout tittle="Mindcare - Sobre Mindcare" >
     <section>
-        <div class="about_box_image" >
-            <img style="view-transition-name: mindcare2;" src="image/mindcare2.webp" alt="">
-        </div>
-        <div class="about_box_text" >
+        <img style="view-transition-name: mindcare2;" src="image/mindcare2.webp" alt="">
+        <article class="about_box_text" >
             <div>
                 <h3>sobre Mindcare</h3>
                 <h2>
@@ -29,7 +27,7 @@ import Layout from "../layouts/Layout.astro"
                 <p>- <strong>Calidad</strong>: Contamos con un equipo altamente calificado y certificado para brindarte el mejor servicio.</p>
             </div>
             <h3 class="about_close" >CON MINDCARE, TU BIENESTAR ESTÁ EN LAS MEJORES MANOS</h3>
-        </div>
+        </article>
     </section>
 </Layout>
 
@@ -38,9 +36,9 @@ import Layout from "../layouts/Layout.astro"
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
         gap: 30px;
-        padding-top: 30px;
+        padding-block: 100px;
     }
     img{
         width: 300px;
@@ -50,13 +48,10 @@ import Layout from "../layouts/Layout.astro"
     p{
         text-transform: uppercase;
     }
-    .about_box_image{
-        display: grid;
-        justify-content: flex-end;
-    }
     .about_box_text{
         width: 500px;
-        display: grid;
+        display: flex;
+        flex-direction: column;
         align-items: flex-start;
         gap: 25px;
     }
@@ -66,4 +61,22 @@ import Layout from "../layouts/Layout.astro"
     .about_close{
         font-size: 1rem;
     }
+
+    @media
+        (width < 700px){
+            section{
+                flex-direction: column;
+            }
+            img{
+                width: 200px;
+            }
+            h3{
+                font-size: 3rem;
+            }
+            .about_box_text{
+                width: 90%;
+                align-items: center;
+                justify-content: center;
+            }
+        }
 </style>
