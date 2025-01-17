@@ -7,7 +7,7 @@ import Navbar from "../components/Navbar.astro";
 	const navbar = document.getElementById('navbar')
 
 	window.addEventListener('scroll',()=>{
-		if(window.scrollY > 100){
+		if(window.scrollY > 50){
 			navbar?.classList.add('scrolled')
 		}else {
 			navbar?.classList.remove('scrolled')
@@ -44,6 +44,9 @@ import Navbar from "../components/Navbar.astro";
 		font-family: 'Raleway-SemiBold';
 		src: url('../assets/fonts/Raleway-SemiBold.ttf') format('truetype');
 	}
+	@view-transition{
+		navigation: auto;
+	}
 	:root{
 		--primary-color:#F7F7F7;
 		--secundary-color:#272727;
@@ -71,7 +74,7 @@ import Navbar from "../components/Navbar.astro";
 		color: var(--secundary-color);
 		background-repeat: no-repeat;
 		margin: 0;
-		width: 100vw;
+		width: 99.5vw;
 	}
 	h1{
 		font-family: 'Raleway-SemiBold', sans-serif;

@@ -2,19 +2,68 @@
 import Layout from "../layouts/Layout.astro"
 ---
 
-<Layout tittle="Mindcare - About" >
+<Layout tittle="Mindcare - Sobre Mindcare" >
     <section>
-        <div>
-            <h1>about</h1>
+        <div class="about_box_image" >
+            <img style="view-transition-name: mindcare2;" src="image/mindcare2.webp" alt="">
+        </div>
+        <div class="about_box_text" >
+            <div>
+                <h3>sobre Mindcare</h3>
+                <h2>
+                    EN MINDCARE, NUESTRA MISIÓN ES CONECTARSE CON EL BIENESTAR QUE NECESITAS. SABEMOS LO IMPORTANTE QUE ES ENCONTRAR EL APOYO ADECUADO, YA SEA PARA INICIAR TERAPIA O PARA REALIZAR UNA EVALUACIÓN NEUROPSICOLOGÍCA. 
+                </h2>
+            </div>
+            <div>
+                <h3 class="about_subheading" >¿Cómo trabajamos?</h3>
+                <p>
+                    Ofrecemos un enfoque personalizado para ayudarte a dar el primer paso:
+                </p>
+                <p>- Podés solicitar una entrevista inicial.</p>
+                <p>- Nuestro equipo te orientará y asignará al profesional que mejor se adapte a tus necesidades.</p>
+            </div>
+            <div>
+                <h3 class="about_subheading" >¿Por qué elegirnos?</h3>
+                <p>- <strong>Rapidez</strong>: Sabemos que tu tiempo es valioso, por eso agilizamos los procesos.</p>
+                <p>- <strong>Eficiencia</strong>: Nos aseguramos de que cada paso sea claro y efectivo.</p>
+                <p>- <strong>Calidad</strong>: Contamos con un equipo altamente calificado y certificado para brindarte el mejor servicio.</p>
+            </div>
+            <h3 class="about_close" >CON MINDCARE, TU BIENESTAR ESTÁ EN LAS MEJORES MANOS</h3>
         </div>
     </section>
 </Layout>
 
 <style>
     section{
-        display: grid;
+        display: flex;
         align-items: center;
         justify-content: center;
         height: 100vh;
+        gap: 30px;
+        padding-top: 30px;
+    }
+    img{
+        width: 300px;
+        border-radius: 80px;
+		border: solid 4px var(--white-color);
+    }
+    p{
+        text-transform: uppercase;
+    }
+    .about_box_image{
+        display: grid;
+        justify-content: flex-end;
+    }
+    .about_box_text{
+        width: 500px;
+        display: grid;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    .about_subheading{
+        font-size: 2rem;
+    }
+    .about_close{
+        font-size: 1rem;
     }
 </style>
