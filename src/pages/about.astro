@@ -36,9 +36,9 @@ import Layout from "../layouts/Layout.astro"
         display: flex;
         align-items: center;
         justify-content: center;
-        height: 100%;
+        height: 100vh;
         gap: 30px;
-        padding-block: 100px;
+        padding-block: 50px;
     }
     h1{
         font-size: 4rem;
@@ -68,6 +68,7 @@ import Layout from "../layouts/Layout.astro"
     @media
         (width < 700px){
             section{
+                height: 100%;
                 flex-direction: column;
             }
             img{
