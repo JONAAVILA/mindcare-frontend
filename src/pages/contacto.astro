@@ -4,15 +4,47 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout tittle="Mindcare - Contacto" >
     <section>
-        <h1>contacto</h1>
+        <div class="contact_box_info" >
+            <header>
+                <h1>Dejanos tu consulta</h1>
+                <h2>ESTAMOS AQUÍ PARA AYUDARTE, COMPLETÁ EL FORMULARIO Y NUESTRO EQUIPO SE PONDRÁ EN CONTACTO CON VOS PARA BRINDARTE LA ORIENTACIÓN QUE NECESITÁS.</h2>
+            </header>
+            <div>
+                <h3 class="contact_subheading" >podemos asesorarte </h3>
+                <p>Si tenés dudas o necesitás más información, no te preocupes. Estamos disponibles para resolver tus consultas y guiarte en el proceso.</p>
+            </div>
+            <div>
+                <h3 class="contact_subheading" >coordina una entrevista</h3>
+                <p>Si lo preferís, podemos organizar una entrevista inicial para entender mejor tus necesidades y asignarte al profesional indicado.</p>
+            </div>
+        </div>
+        <div>
+            
+        </div>
     </section>
 </Layout>
 
 <style>
     section{
-        display:grid;
+        display: flex;
         align-items: center;
         justify-content: center;
-        height: 100vh;
+        height: 100%;
+        gap: 30px;
+        padding-block: 100px;
+    }
+    h1{
+        font-size: 4rem;
+    }
+    p{
+        text-transform: uppercase;
+    }
+    .contact_subheading{
+        font-size: 2rem;
+    }
+    .contact_box_info{
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
     }
 </style>
