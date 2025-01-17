@@ -6,12 +6,12 @@ import Layout from "../layouts/Layout.astro"
     <section>
         <img style="view-transition-name: mindcare2;" src="image/mindcare2.webp" alt="">
         <article class="about_box_text" >
-            <div>
-                <h3>sobre Mindcare</h3>
+            <header>
+                <h1>sobre Mindcare</h>
                 <h2>
                     EN MINDCARE, NUESTRA MISIÓN ES CONECTARSE CON EL BIENESTAR QUE NECESITAS. SABEMOS LO IMPORTANTE QUE ES ENCONTRAR EL APOYO ADECUADO, YA SEA PARA INICIAR TERAPIA O PARA REALIZAR UNA EVALUACIÓN NEUROPSICOLOGÍCA. 
                 </h2>
-            </div>
+            </header>
             <div>
                 <h3 class="about_subheading" >¿Cómo trabajamos?</h3>
                 <p>
@@ -39,6 +39,9 @@ import Layout from "../layouts/Layout.astro"
         height: 100%;
         gap: 30px;
         padding-block: 100px;
+    }
+    h1{
+        font-size: 4rem;
     }
     img{
         width: 300px;
