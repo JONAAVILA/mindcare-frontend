@@ -19,7 +19,7 @@ import ConsultForm from "../components/react/forms/ConsultForm"
                 <p>Si lo preferís, podemos organizar una entrevista inicial para entender mejor tus necesidades y asignarte al profesional indicado.</p>
             </div>
         </div>
-        <div>
+        <div class="contact_box_form" >
             <ConsultForm/>
         </div>
     </section>
@@ -51,8 +51,15 @@ import ConsultForm from "../components/react/forms/ConsultForm"
     }
     .contact_box_info{
         width: 600px;
+        height: 70%;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         gap: 30px;
+    }
+    .contact_box_form{
+        display: flex;
+        align-items: flex-start;
+        height: 70%;
     }
 </style>

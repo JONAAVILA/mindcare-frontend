@@ -4,7 +4,9 @@ import Layout from "../layouts/Layout.astro"
 
 <Layout tittle="Mindcare - Sobre Mindcare" >
     <section>
-        <img style="view-transition-name: mindcare2;" src="image/mindcare2.webp" alt="">
+        <div class="about_box_image" >
+            <img style="view-transition-name: mindcare2;" src="image/mindcare2.webp" alt="">
+        </div>
         <article class="about_box_text" >
             <header>
                 <h1>sobre Mindcare</h>
@@ -51,8 +53,15 @@ import Layout from "../layouts/Layout.astro"
     p{
         text-transform: uppercase;
     }
+    .about_box_image{
+        width: auto;
+        height: 70%;
+        display: flex;
+        align-items: flex-start;
+    }
     .about_box_text{
         width: 500px;
+        height: 70%;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
