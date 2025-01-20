@@ -1,13 +1,31 @@
 .consult_form{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 20px;
+    width: 250px;
+    gap: 5px;
     background-color: var(--primary-color);
     padding: 15px;
     border-radius: 30px;
 }
 .consult_box_button{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
     margin-block: 10px 20px;
+}
+.consult_box_errors{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    height: 10px;
+    margin-bottom: 2px;
+    p{
+        font-size: 8px;
+        font-weight: 700;
+        color: var(--secundary-color);
+        padding-left: 12px;
+    }
 }
