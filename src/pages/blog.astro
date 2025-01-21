@@ -4,8 +4,18 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout tittle="Mindcare - Blog" >
     <section>
-        <div>
-            <h1>blog</h1>
+        <div class="blog_box_header">
+            <header>
+                <h1>Manteneté informado</h1>
+                <img
+                    class="blog_arrow_icon" 
+                    src="icons/arrow.svg" 
+                    alt="mindcare icon arrow"
+                >
+            </header>
+            <div>
+                <h2>ACÁ PODÉS VER LAS NOTICIAS RELACIONADAS A LA SALUD Y A MINDCARE, PARA NO PERDERTE NADA ¡SUSCRIBITE!</h2>
+            </div>
         </div>
     </section>
 </Layout>
@@ -16,5 +26,24 @@ import Layout from "../layouts/Layout.astro";
         align-items: center;
         justify-content: center;
         height: 100vh;
+    }
+    .blog_box_header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+    h1{
+        font-size: 5rem;
+    }
+    .blog_arrow_icon{
+        width: 60px;
+        transform: rotate(90deg);
     }
 </style>
