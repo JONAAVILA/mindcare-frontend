@@ -7,7 +7,6 @@ export default async function adminLogin(values,prod,urlAdminLoginDev,urlAdminLo
 
     try {
         const admin = {
-            seller:'mindcare',
             email:values.email,
             password:values.password
         }

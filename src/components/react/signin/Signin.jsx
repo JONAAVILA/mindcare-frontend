@@ -16,26 +16,25 @@ const Signin = ({prod,urlAdminSigninDev,urlAdminSigninProd})=>{
         initialValues:{
             name:'',
             surname:'',
-            seller:'mindcare',
             email:'',
             password:''
         },
         validationSchema:validateAdmin,
         onSubmit: async (values)=>{
             const res = await postAdmin(values,prod,urlAdminSigninDev,urlAdminSigninProd)
+            console.log('res',res)
             if(res.name){
                 setAlert(`Admin ${res.name} creado con exito 🚀`)
                 setStorage(res)
                 setTimeout(()=>{
                     navigate('/dashboard')
-                    return
+                },3000)
+            }else{
+                setAlert(res)
+                setTimeout(()=>{
+                    navigate('/admin')
                 },3000)
             }
-            setAlert(res)
-            setTimeout(()=>{
-                navigate('/admin')
-                return
-            },3000)
         }
     })
 
