@@ -1,6 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ConsultForm from "../components/react/forms/ConsultForm"
+import InstagramButton from "../components/buttons/InstagramButton.astro";
+import MetaButton from "../components/buttons/MetaButton.astro";
+import WhatsappButton from "../components/buttons/WhatsappButton.astro";
 ---
 
 <Layout tittle="Mindcare - Contacto" >
@@ -11,12 +14,34 @@ import ConsultForm from "../components/react/forms/ConsultForm"
                 <h2>ESTAMOS AQUÍ PARA AYUDARTE, COMPLETÁ EL FORMULARIO Y NUESTRO EQUIPO SE PONDRÁ EN CONTACTO CON VOS PARA BRINDARTE LA ORIENTACIÓN QUE NECESITÁS.</h2>
             </header>
             <div>
-                <h3 class="contact_subheading" >podemos asesorarte </h3>
-                <p>Si tenés dudas o necesitás más información, no te preocupes. Estamos disponibles para resolver tus consultas y guiarte en el proceso.</p>
+                <div class="contact_box_subheading_left" >
+                    <div>
+                        <h3>podemos asesorarte </h3>
+                        <p>Si tenés dudas o necesitás más información, no te preocupes. Estamos disponibles para resolver tus consultas y guiarte en el proceso.</p>
+                    </div>
+                    <img src="image/mindcare-consulta.webp" alt="">
+                </div>
+                <div class="contact_box_subheading" >
+                    <img src="image/mindcare3.webp" alt="">
+                    <div>
+                        <h3>coordina una entrevista</h3>
+                        <p>Si lo preferís, podemos organizar una entrevista inicial para entender mejor tus necesidades y asignarte al profesional indicado.</p>
+                    </div>
+                </div>
             </div>
             <div>
-                <h3 class="contact_subheading" >coordina una entrevista</h3>
-                <p>Si lo preferís, podemos organizar una entrevista inicial para entender mejor tus necesidades y asignarte al profesional indicado.</p>
+                <div class="contact_box_buttons" >
+                    <InstagramButton/>
+                    <span>holapsicocaro</span>
+                </div>
+                <div class="contact_box_buttons" >
+                    <MetaButton/>
+                    <span>psicosolucionesonline.com.ar</span>
+                </div>
+                <div class="contact_box_buttons" >
+                    <WhatsappButton/>
+                    <span>11 5637-1191</span>
+                </div>
             </div>
         </div>
         <div class="contact_box_form" >
@@ -38,28 +63,56 @@ import ConsultForm from "../components/react/forms/ConsultForm"
         font-size: 4rem;
     }
     h2{
+        width: 550px;
         margin-left: 3px;
-        width: 70%;
     }
-    p{
-
-        width: 70%;
-        text-transform: uppercase;
-    }
-    .contact_subheading{
+    h3{
         font-size: 2rem;
     }
+    p{
+        width: 400px;
+        text-wrap: balance;
+        text-transform: uppercase;
+    }
+    img{
+        width: 200px;
+        height: 60px;
+        border-radius: 150px;
+        object-fit: cover;
+        border: solid 4px var(--primary-color);
+    }
+    span{
+        font-size: 15px;
+    }
     .contact_box_info{
-        width: 600px;
+        width: auto;
         height: 70%;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        gap: 30px;
+        gap: 50px;
+    }
+    .contact_box_subheading_left{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 20px;
+    }
+    .contact_box_subheading{
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        gap: 20px;
     }
     .contact_box_form{
         display: flex;
         align-items: flex-start;
         height: 70%;
+    }
+    .contact_box_buttons{
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        gap: 8px;
     }
 </style>
