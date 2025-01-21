@@ -1,9 +1,9 @@
 import axios from "axios"
 
-export default async function adminLogin(values,prod,urlAdminLoginDev,urlAdminLoginProd){
+export default async function adminLogin(values,prod,urlAdminLoginProd,urlAdminLoginDev){
     
-    const URL = prod === true ? urlAdminLoginProd : urlAdminLoginDev
-    console.log('params',prod)
+    const URL = prod === 'true' ? urlAdminLoginProd : urlAdminLoginDev
+    console.log('url',urlAdminLoginProd)
 
     try {
         const admin = {
@@ -13,7 +13,7 @@ export default async function adminLogin(values,prod,urlAdminLoginDev,urlAdminLo
         const res = await axios.post(URL,admin,{
             withCredentials:true
         })
-        console.log('adminLogin',res.data)
+        console.log('adminLog',res.data)
         return res.data
     } catch (error) {
         return error.response.data.error

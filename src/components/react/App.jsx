@@ -10,31 +10,34 @@ const App = ({
     urlCheckCodeProd,
     urlAdminLoginProd,
     urlAdminSigninProd,
+    urlRefreshProd,
     urlSendCodeDev,
     urlCheckCodeDev,
     urlAdminLoginDev,
-    urlAdminSigninDev
+    urlAdminSigninDev,
+    urlRefreshDev
 })=>{
     return(
         <BrowserRouter>
             <Routes>
                 <Route
-                    path="/admin"
+                    path="/admin/login"
                     element={
                         <Login
                             prod={prod}
                             urlSendCodeProd={urlSendCodeProd}
                             urlCheckCodeProd={urlCheckCodeProd}
                             urlAdminLoginProd={urlAdminLoginProd}
-
+                            urlRefreshProd={urlRefreshProd}
                             urlSendCodeDev={urlSendCodeDev}
                             urlCheckCodeDev={urlCheckCodeDev}
                             urlAdminLoginDev={urlAdminLoginDev}
+                            urlRefreshDev={urlRefreshDev}
                         />
                     }
                 />
                 <Route
-                    path="/signin"
+                    path="/admin/signin"
                     element={
                         <Signin 
                             prod={prod}
@@ -44,7 +47,7 @@ const App = ({
                     }
                 />
                 <Route 
-                    path="/dashboard" 
+                    path="/admin" 
                     element={<Dashboard/>}
                 />
             </Routes>

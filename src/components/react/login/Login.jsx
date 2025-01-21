@@ -8,9 +8,21 @@ import sendCode from '../../adapters/sendCode'
 import adminLogin from '../../adapters/adminLogin'
 import { useState } from 'react'
 import ValidateCode from '../modals/validateCode/ValidateCode'
+import Alert from '../modals/alert/Alert'
 
-const Login = ({prod,urlAdminLoginProd,urlAdminLoginDev,urlSendCodeProd,urlSendCodeDev,urlCheckCodeProd,urlCheckCodeDev})=>{
+const Login = ({
+    prod,
+    urlAdminLoginProd,
+    urlAdminLoginDev,
+    urlSendCodeProd,
+    urlSendCodeDev,
+    urlCheckCodeProd,
+    urlCheckCodeDev,
+    urlRefreshProd,
+    urlRefreshDev
+})=>{
     const [modal, setModal] = useState(false)
+    const [alert, setAlert] = useState('')
     const navigate = useNavigate()
 
     const formik = useFormik({
@@ -21,25 +33,30 @@ const Login = ({prod,urlAdminLoginProd,urlAdminLoginDev,urlSendCodeProd,urlSendC
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
             
-            const res = await adminLogin(values,prod,urlAdminLoginProd,urlAdminLoginDev)
-            console.log('seller',res)
+            const res = await adminLogin(
+                values,
+                prod,
+                urlAdminLoginProd,
+                urlAdminLoginDev
+            )
+            console.log('adminlogin',res)
             if(res.name){
                 setStorage(res)
-                navigate('/dashboard')
+                navigate('/admin')
                 return
             }
 
             if(res === 'validate user'){
                 const codeRes = await sendCode(prod,urlSendCodeProd,urlSendCodeDev)
                 if(codeRes.error) {
-                    setalert(codeRes.error)
+                    setAlert(codeRes.error)
                     return
                 }
-                setmodal(!modal)
+                setModal(!modal)
                 return
             }
 
-            setalert('Clave o correo incorrecto')
+            setAlert('Clave o correo incorrecto')
             return
         }
     })
@@ -48,9 +65,23 @@ const Login = ({prod,urlAdminLoginProd,urlAdminLoginDev,urlSendCodeProd,urlSendC
         setModal(!modal)
     }
 
+    const handleAlert = ()=>{
+        setAlert('')
+    }
+
     return(
         <div className='login_container' >
-            {modal && <ValidateCode handleModal={handleModal} email={formik.values.email} prod={prod} urlCheckCodeProd={urlCheckCodeProd} urlCheckCodeDev={urlCheckCodeDev} />}
+            {modal && <ValidateCode
+                            password={formik.values.password}
+                            handleModal={handleModal} 
+                            email={formik.values.email} 
+                            prod={prod} 
+                            urlCheckCodeProd={urlCheckCodeProd} 
+                            urlCheckCodeDev={urlCheckCodeDev}
+                            urlRefreshProd={urlRefreshProd}
+                            urlRefreshDev={urlRefreshDev}
+                        />}
+            {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             <div>
                 <Link to={'/signin'} >
                     <h2>INGRESO</h2>

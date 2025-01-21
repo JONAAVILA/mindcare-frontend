@@ -2,7 +2,7 @@ import axios from "axios"
 
 export default async function sendCode (prod,urlSendCodeProd,urlSendCodeDev){
 
-    const URL = prod === true ? urlSendCodeProd : urlSendCodeDev
+    const URL = prod === 'true' ? urlSendCodeProd : urlSendCodeDev
 
     const res = await axios.post(URL,{},{
         withCredentials:true

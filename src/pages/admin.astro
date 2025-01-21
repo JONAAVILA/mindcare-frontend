@@ -7,11 +7,13 @@ const VITE_URL_SEND_CODE_PROD = import.meta.env.VITE_URL_SEND_CODE_PROD
 const VITE_URL_CHECK_CODE_PROD = import.meta.env.VITE_URL_CHECK_CODE_PROD
 const VITE_URL_ADMIN_LOGIN_PROD = import.meta.env.VITE_URL_ADMIN_LOGIN_PROD
 const VITE_URL_ADMIN_SIGNIN_PROD = import.meta.env.VITE_URL_ADMIN_SIGNIN_PROD
+const VITE_URL_REFRESH_PROD = import.meta.env.VITE_URL_REFRESH_PROD
 
 const VITE_URL_SEND_CODE_DEV = import.meta.env.VITE_URL_SEND_CODE_DEV
 const VITE_URL_CHECK_CODE_DEV = import.meta.env.VITE_URL_CHECK_CODE_DEV
 const VITE_URL_ADMIN_LOGIN_DEV = import.meta.env.VITE_URL_ADMIN_LOGIN_DEV
 const VITE_URL_ADMIN_SIGNIN_DEV = import.meta.env.VITE_URL_ADMIN_SIGNIN_DEV
+const VITE_URL_REFRESH_DEV = import.meta.env.VITE_URL_REFRESH_DEV
 ---
 
 <Layout tittle="Mindcare - Admin" >
@@ -23,11 +25,12 @@ const VITE_URL_ADMIN_SIGNIN_DEV = import.meta.env.VITE_URL_ADMIN_SIGNIN_DEV
             urlCheckCodeProd={VITE_URL_CHECK_CODE_PROD}
             urlAdminLoginProd={VITE_URL_ADMIN_LOGIN_PROD}
             urlAdminSigninProd={VITE_URL_ADMIN_SIGNIN_PROD}
-    
+            urlRefreshProd={VITE_URL_REFRESH_PROD}
             urlSendCodeDev={VITE_URL_SEND_CODE_DEV}
             urlCheckCodeDev={VITE_URL_CHECK_CODE_DEV}
             urlAdminLoginDev={VITE_URL_ADMIN_LOGIN_DEV}
             urlAdminSigninDev={VITE_URL_ADMIN_SIGNIN_DEV}
+            urlRefreshDev={VITE_URL_REFRESH_DEV}
         />
     </section>
 </Layout>
