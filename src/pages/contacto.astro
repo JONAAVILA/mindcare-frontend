@@ -13,7 +13,7 @@ import WhatsappButton from "../components/buttons/WhatsappButton.astro";
                 <h1>Dejanos tu consulta</h1>
                 <h2>ESTAMOS AQUÍ PARA AYUDARTE, COMPLETÁ EL FORMULARIO Y NUESTRO EQUIPO SE PONDRÁ EN CONTACTO CON VOS PARA BRINDARTE LA ORIENTACIÓN QUE NECESITÁS.</h2>
             </header>
-            <div>
+            <div class="contact_container_subheading" >
                 <div class="contact_box_subheading_left" >
                     <div>
                         <h3>podemos asesorarte </h3>
@@ -56,7 +56,7 @@ import WhatsappButton from "../components/buttons/WhatsappButton.astro";
         align-items: center;
         justify-content: center;
         height: 100vh;
-        gap: 40px;
+        gap: 50px;
         padding-block: 50px;
     }
     h1{
@@ -82,7 +82,11 @@ import WhatsappButton from "../components/buttons/WhatsappButton.astro";
         border: solid 4px var(--primary-color);
     }
     span{
-        font-size: 15px;
+        font-size: 12px;
+    }
+    .contact_container_subheading{
+        display: grid;
+        gap: 10px;
     }
     .contact_box_info{
         width: auto;
