@@ -1,7 +1,7 @@
 const setStorage = (values)=>{
     const user = JSON.stringify(
         {
-            values:values,
+            values,
             isValidateLogin:true
         }
     )

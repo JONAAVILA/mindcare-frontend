@@ -19,7 +19,7 @@ const useIsLogin = () => {
                     navigate('/admin/signin')
                     return
                 }
-                navigate('/admin')
+                return
             } catch (error) {
                 console.error("Error al parsear el usuario:", error)
                 navigate('/admin/login')

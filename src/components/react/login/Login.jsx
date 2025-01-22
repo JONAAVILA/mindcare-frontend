@@ -83,7 +83,7 @@ const Login = ({
                         />}
             {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             <div>
-                <Link to={'/signin'} >
+                <Link to={'/admin/signin'} >
                     <h2>INGRESO</h2>
                 </Link>
                 <h3 className="login_heading" >Admin</h3>

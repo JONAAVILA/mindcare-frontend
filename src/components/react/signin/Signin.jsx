@@ -27,7 +27,7 @@ const Signin = ({prod,urlAdminSigninDev,urlAdminSigninProd})=>{
                 setAlert(`Admin ${res.name} creado con exito 🚀`)
                 setStorage(res)
                 setTimeout(()=>{
-                    navigate('/dashboard')
+                    navigate('/admin')
                 },3000)
             }else{
                 setAlert(res)
