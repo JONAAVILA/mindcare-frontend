@@ -1,0 +1,84 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout>
+    <section>
+        <article>
+            <header>
+                <h1>Políticas de privacidad</h1>
+                <p>En MindCare, respetamos y protegemos la privacidad de nuestros usuarios. Este documento describe cómo recopilamos, utilizamos y protegemos la información personal proporcionada a través de nuestro sitio web www.mindcare.com.ar. Al utilizar nuestro sitio web, aceptas los términos descritos a continuación.</p>
+            </header>
+            <div class="privacy_article_box" >
+                <h3>1. Información que recopilamos</h3>
+                <h4>a. Formulario de contacto</h4>
+                <p>Al completar el formulario de contacto, solicitamos los siguientes datos:</p>
+                <ul>
+                    <li>Nombre.</li>
+                    <li>Correo electrónico.</li>
+                    <li>Teléfono.</li>
+                    <li>Mensaje que desees enviarnos.</li>
+                </ul>
+                <p>Esta información es utilizada únicamente para responder tus consultas y ofrecerte el soporte necesario.</p>
+                <h4>b. Botón de WhatsApp</h4>
+                <p>Cuando interactúas con nuestro botón de WhatsApp, la comunicación se realiza directamente a través de esa plataforma. No almacenamos ni registramos estas conversaciones en nuestros sistemas.</p>
+                <h4>c. Newsletter</h4>
+                <p>Al suscribirte a nuestro servicio de newsletter, recopilamos y almacenamos los siguientes datos:</p>
+                <ul>
+                    <li>Nombre.</li>
+                    <li>Correo electrónico.</li>
+                </ul>
+                <p>Usamos esta información para enviarte contenidos relacionados con nuestras novedades, servicios y artículos del blog. Puedes darte de baja en cualquier momento utilizando el enlace de "Cancelar suscripción" incluido en todos nuestros correos.</p>
+                <h4>d. Cookies y tecnologías similares</h4>
+                <p>Utilizamos cookies para mejorar tu experiencia de navegación. Estas permiten personalizar el contenido, analizar el tráfico y recordar tus preferencias. Puedes configurar tu navegador para rechazar cookies; sin embargo, esto podría afectar algunas funcionalidades del sitio.</p>
+                <h4>e. Blog</h4>
+                <p>Si interactúas con nuestro blog (por ejemplo, dejando comentarios o participando en encuestas), podríamos recopilar información adicional, como tu nombre o dirección de correo electrónico.</p> 
+            </div>
+            <div class="privacy_article_box" >
+                <h3>2. Uso de la información</h3>
+                <p>Los datos recopilados son utilizados con los siguientes fines:</p>
+                <ul>
+                    <li>Responder consultas y solicitudes enviadas a través del formulario.</li>
+                    <li>Brindar soporte y orientación a través de WhatsApp.</li>
+                    <li>Enviar contenido informativo a través de nuestro newsletter, únicamente si te has suscrito.</li>
+                    <li>Analizar y mejorar nuestra página web y servicios.</li>
+                    <li>Enviar información relevante, como actualizaciones sobre nuestros contenidos o servicios, si expresas tu consentimiento para recibirla.</li>
+                </ul>
+                <p>No compartimos ni vendemos tu información personal a terceros, salvo cuando sea requerido por ley o para cumplir con obligaciones legales.</p>
+            </div>
+        </article>
+    </section>
+</Layout>
+
+<style>
+    section{
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding-block: 100px;
+    }
+    article{
+        display: grid;
+        width: 1000px;
+        gap: 25px;
+    }
+    header{
+        padding-block: 15px;
+        border-bottom: solid 1px;
+    }
+    h1{
+        font-size: 3rem;
+    }
+    h3{
+        font-size: 2rem;
+    }
+    li{
+        font-size: 12px;
+    }
+    .privacy_article_box{
+        padding-block: 15px;
+        border-bottom: solid 1px;
+    }
+</style>
