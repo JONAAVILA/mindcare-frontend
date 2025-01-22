@@ -1,9 +1,13 @@
 ---
+import Banner from "../components/Banner.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout tittle="Mindcare - Blog" >
     <section>
+        <div class="blog_box_banner" >
+            <Banner message="PROXIMAMENTE" />
+        </div>
         <div class="blog_box_header">
             <header>
                 <h1>Manteneté informado</h1>
@@ -22,6 +26,7 @@ import Layout from "../layouts/Layout.astro";
 
 <style>
     section{
+        position: relative;
         display:grid;
         align-items: center;
         justify-content: center;
@@ -45,5 +50,12 @@ import Layout from "../layouts/Layout.astro";
     .blog_arrow_icon{
         width: 50px;
         transform: rotate(90deg);
+    }
+    .blog_box_banner{
+        z-index: 10;
+        position: fixed;
+        left: 50%;
+        top: 60%;
+        transform: translate(-50%,50%);
     }
 </style>
