@@ -68,3 +68,26 @@ export const validateCode = Yup.object().shape({
         .max(6,'Código inválido')
         .required('Ingrese el código')
 })
+
+export const validateBlog = Yup.object().shape({
+    idAdmin:Yup.string()
+        .min(10,'ID demasiado corto')
+        .uuid('ID inválido')
+        .required('ID requerido'),
+    tittle:Yup.string()
+        .min(10,'Título demasiado corto')
+        .max(60,'Título demasiado largo')
+        .required('Título requerido'),
+    subtittle:Yup.string()
+        .min(10,'Subtítulo demasiado corto')
+        .max(120,'Subtítulo demasiado largo')
+        .required('Subtítulo requerido'),
+    description:Yup.string()
+        .min(10,'Descripción demasiado corto')
+        .max(900,'Descripción demasiado largo')
+        .required('Descripción requerido'),
+    image:Yup.string()
+        .min(10,'Imagen ruta demasiado corto')
+        .max(900,'Imagen ruta demasiado largo')
+        .required('Imagen requerido'),
+})  

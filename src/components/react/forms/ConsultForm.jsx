@@ -1,4 +1,4 @@
-import { validateConsult } from '../../../../utils/validate'
+import { validateConsult } from '../../../utils/validate'
 import { useFormik } from 'formik'
 import { useState } from 'react'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'

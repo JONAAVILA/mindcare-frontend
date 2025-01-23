@@ -2,8 +2,8 @@ import './validateCode.css'
 import { useFormik } from "formik"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { validateCode } from '../../../../../utils/validate'
-import setStorage from '../../../../../utils/setStorage'
+import { validateCode } from '../../../../utils/validate'
+import setStorage from '../../../../utils/setStorage'
 import confirmCode from '../../../adapters/confirmCode'
 import LoadIcon from '../../icons/loader/LoadIcon'
 import refresh from '../../../adapters/refresh'
