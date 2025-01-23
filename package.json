@@ -9,10 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.1.4",
+    "@astrojs/react": "^4.1.6",
     "@types/react": "^19.0.6",
     "@types/react-dom": "^19.0.3",
-    "astro": "^4.16.16",
+    "astro": "^5.1.8",
     "axios": "^1.7.9",
     "formik": "^2.4.6",
     "ldrs": "^1.0.2",
