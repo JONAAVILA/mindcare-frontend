@@ -9,7 +9,7 @@
     display: grid;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 35px;
     h3{
         font-size: 2.5rem;
     }
