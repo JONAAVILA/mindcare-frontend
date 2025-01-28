@@ -15,7 +15,8 @@ const App = ({
     urlCheckCodeDev,
     urlAdminLoginDev,
     urlAdminSigninDev,
-    urlRefreshDev
+    urlRefreshDev,
+    cludName
 })=>{
     return(
         <BrowserRouter>
@@ -49,6 +50,7 @@ const App = ({
                 <Route 
                     path="/admin" 
                     element={<Dashboard/>}
+                    cludName={cludName}
                 />
             </Routes>
         </BrowserRouter>

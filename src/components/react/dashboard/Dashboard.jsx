@@ -4,22 +4,19 @@ import { validateBlog } from '../../../utils/validate'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import { useState } from 'react'
 import axios from 'axios'
-// import { useEffect } from 'react'
-// import useIsLogin from '../hooks/useIsLogin'
 
-const Dashboard = ()=>{
+const Dashboard = ({cludName})=>{
     const [file, setFile] = useState(null);
-    const URL = 'https://mindcare-blog.twic.pics'
+    const URL= `https://api.cloudinary.com/v1_1/${cludName}/image/upload`
 
     const handleFileChange = (event) => {
-        setFile(event.target.files[0]); // Almacena el archivo seleccionado
+        setFile(event.target.files[0])
     };
     // const login = useIsLogin()
 
     // useEffect(()=>{
     //     login()
     // },[])
-    console.log(file)
     const formik = useFormik({
         initialValues:{
             tittle:'',
@@ -29,7 +26,7 @@ const Dashboard = ()=>{
             password:''
         },
         validationSchema:validateBlog,
-        onSubmit: async ({ resetForm }) => {
+        onSubmit: async () => {
             try {
                 if (!file) {
                     alert('Por favor selecciona una imagen');
@@ -37,12 +34,8 @@ const Dashboard = ()=>{
                 }
 
                 const formData = new FormData();
-                formData.append('file', file); // Añade la imagen
-                formData.append('login', 'mindcare_admin'); // Sustituye 'tu_login' por el valor real
-                formData.append('password', 'M1ndC@r3_2025!');
-                // formData.append('tittle', values.tittle); // Añade el título
-                // formData.append('subtittle', values.subtittle); // Añade el subtítulo
-                // formData.append('description', values.description); // Añade la descripción
+                formData.append('file', file)
+                formData.append('upload_preset', 'preset_mindcare');
 
                 const response = await axios.post(URL, formData, {
                     headers: {
@@ -50,10 +43,10 @@ const Dashboard = ()=>{
                     },
                 });
 
-                console.log('Respuesta del servidor:', response.data);
+                console.log('Respuesta del servidor:', response.data.url);
                 alert('Publicación creada con éxito');
-                resetForm(); // Resetea el formulario
-                setFile(null); // Limpia el archivo seleccionado
+                formik.resetForm()
+                setFile(null)
             } catch (error) {
                 console.error('Error al crear la publicación:', error);
                 alert('Ocurrió un error al subir la publicación');
