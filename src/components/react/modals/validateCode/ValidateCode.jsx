@@ -13,11 +13,6 @@ const ValidateCode = ({
     password,
     email,
     handleModal,
-    prod,
-    urlCheckCodeProd,
-    urlCheckCodeDev,
-    urlRefreshProd,
-    urlRefreshDev
 })=>{
     const [error, setError] = useState('')
     const [loader, setloader] = useState(false)
@@ -31,10 +26,10 @@ const ValidateCode = ({
         onSubmit: async (values)=>{
             setloader(!loader)
             const code = values.code
-            const resConfirm = await confirmCode(code,prod,urlCheckCodeProd,urlCheckCodeDev)
+            const resConfirm = await confirmCode(code)
         
             if(resConfirm){
-                const res = await refresh(password,prod,urlRefreshProd,urlRefreshDev)
+                const res = await refresh(password)
                 if(!res){
                     setStorage(res)
                     setError('código inválido')

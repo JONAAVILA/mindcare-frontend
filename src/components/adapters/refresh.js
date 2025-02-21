@@ -1,13 +1,19 @@
 import axios from "axios"
 
-export default async function refresh(password,prod,urlRefreshProd,urlRefreshDev){
+import { 
+    VITE_PRODUCTION,
+    VITE_URL_REFRESH_PROD,
+    VITE_URL_REFRESH_DEV
+} from './envAdapters'
+
+export default async function refresh(password){
     
-    const URL = prod === 'true' ? urlRefreshProd : urlRefreshDev
+    const URL = VITE_PRODUCTION === 'true' ? VITE_URL_REFRESH_PROD : VITE_URL_REFRESH_DEV
 
     try {
         const value = {
             password:password
-        }
+        }   
         const res = await axios.post(URL,value,{
             withCredentials:true
         })

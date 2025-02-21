@@ -1,10 +1,14 @@
 import axios from "axios";
 
+import { 
+    VITE_PRODUCTION,
+    VITE_URL_ADMIN_SIGNIN_PROD,
+    VITE_URL_ADMIN_SIGNIN_DEV
+} from './envAdapters'
 
-export default async function postAdmin(values,prod,urlAdminSigninDev,urlAdminSigninProd){
+export default async function postAdmin(values){
     
-    const URL = prod === 'true' ? urlAdminSigninProd : urlAdminSigninDev
-    console.log(URL)
+    const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_SIGNIN_PROD : VITE_URL_ADMIN_SIGNIN_DEV
 
     try {
         const admin = {

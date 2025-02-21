@@ -10,17 +10,7 @@ import { useState } from 'react'
 import ValidateCode from '../modals/validateCode/ValidateCode'
 import Alert from '../modals/alert/Alert'
 
-const Login = ({
-    prod,
-    urlAdminLoginProd,
-    urlAdminLoginDev,
-    urlSendCodeProd,
-    urlSendCodeDev,
-    urlCheckCodeProd,
-    urlCheckCodeDev,
-    urlRefreshProd,
-    urlRefreshDev
-})=>{
+const Login = ()=>{
     const [modal, setModal] = useState(false)
     const [alert, setAlert] = useState('')
     const navigate = useNavigate()
@@ -33,12 +23,7 @@ const Login = ({
         validationSchema:validateLogin,
         onSubmit: async (values)=>{
             
-            const res = await adminLogin(
-                values,
-                prod,
-                urlAdminLoginProd,
-                urlAdminLoginDev
-            )
+            const res = await adminLogin(values)
             console.log('adminlogin',res)
             if(res.name){
                 setStorage(res)
@@ -47,7 +32,7 @@ const Login = ({
             }
 
             if(res === 'validate user'){
-                const codeRes = await sendCode(prod,urlSendCodeProd,urlSendCodeDev)
+                const codeRes = await sendCode()
                 if(codeRes.error) {
                     setAlert(codeRes.error)
                     return
@@ -75,11 +60,6 @@ const Login = ({
                             password={formik.values.password}
                             handleModal={handleModal} 
                             email={formik.values.email} 
-                            prod={prod} 
-                            urlCheckCodeProd={urlCheckCodeProd} 
-                            urlCheckCodeDev={urlCheckCodeDev}
-                            urlRefreshProd={urlRefreshProd}
-                            urlRefreshDev={urlRefreshDev}
                         />}
             {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             <div>

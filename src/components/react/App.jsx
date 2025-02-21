@@ -4,53 +4,21 @@ import Signin from "./signin/Signin"
 import Login from "./login/Login"
 import './app.css'
 
-const App = ({
-    prod,
-    urlSendCodeProd,
-    urlCheckCodeProd,
-    urlAdminLoginProd,
-    urlAdminSigninProd,
-    urlRefreshProd,
-    urlSendCodeDev,
-    urlCheckCodeDev,
-    urlAdminLoginDev,
-    urlAdminSigninDev,
-    urlRefreshDev,
-    cludName
-})=>{
+const App = ()=>{
     return(
         <BrowserRouter>
             <Routes>
                 <Route
                     path="/admin/login"
-                    element={
-                        <Login
-                            prod={prod}
-                            urlSendCodeProd={urlSendCodeProd}
-                            urlCheckCodeProd={urlCheckCodeProd}
-                            urlAdminLoginProd={urlAdminLoginProd}
-                            urlRefreshProd={urlRefreshProd}
-                            urlSendCodeDev={urlSendCodeDev}
-                            urlCheckCodeDev={urlCheckCodeDev}
-                            urlAdminLoginDev={urlAdminLoginDev}
-                            urlRefreshDev={urlRefreshDev}
-                        />
-                    }
+                    element={<Login/>}
                 />
                 <Route
                     path="/admin/signin"
-                    element={
-                        <Signin 
-                            prod={prod}
-                            urlAdminSigninDev={urlAdminSigninDev}
-                            urlAdminSigninProd={urlAdminSigninProd}
-                        />
-                    }
+                    element={<Signin/>}
                 />
                 <Route 
                     path="/admin" 
                     element={<Dashboard/>}
-                    cludName={cludName}
                 />
             </Routes>
         </BrowserRouter>

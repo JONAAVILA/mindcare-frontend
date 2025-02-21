@@ -3,11 +3,10 @@ import './dashboard.css'
 import { validateBlog } from '../../../utils/validate'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import { useState } from 'react'
-import axios from 'axios'
+import updateImage from '../../adapters/updateImage'
 
-const Dashboard = ({cludName})=>{
+const Dashboard = ()=>{
     const [file, setFile] = useState(null);
-    const URL= `https://api.cloudinary.com/v1_1/${cludName}/image/upload`
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0])
@@ -37,13 +36,9 @@ const Dashboard = ({cludName})=>{
                 formData.append('file', file)
                 formData.append('upload_preset', 'preset_mindcare');
 
-                const response = await axios.post(URL, formData, {
-                    headers: {
-                        'Content-Type': 'multipart/form-data',
-                    },
-                });
+                const response = await updateImage(formData)
 
-                console.log('Respuesta del servidor:', response.data.url);
+                console.log('Respuesta del servidor:', response);
                 alert('Publicación creada con éxito');
                 formik.resetForm()
                 setFile(null)

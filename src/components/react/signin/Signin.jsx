@@ -8,7 +8,7 @@ import Alert from '../modals/alert/Alert'
 import './signin.css'
 import { useNavigate } from 'react-router-dom'
 
-const Signin = ({prod,urlAdminSigninDev,urlAdminSigninProd})=>{
+const Signin = ()=>{
     const [alert, setAlert] = useState('')
     const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ const Signin = ({prod,urlAdminSigninDev,urlAdminSigninProd})=>{
         },
         validationSchema:validateAdmin,
         onSubmit: async (values)=>{
-            const res = await postAdmin(values,prod,urlAdminSigninDev,urlAdminSigninProd)
+            const res = await postAdmin(values)
             console.log('res',res)
             if(res.name){
                 setAlert(`Admin ${res.name} creado con exito 🚀`)

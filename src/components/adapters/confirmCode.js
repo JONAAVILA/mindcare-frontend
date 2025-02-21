@@ -1,8 +1,14 @@
 import axios from "axios"
 
-export default async function confirmCode(code,prod,urlCheckCodeProd,urlCheckCodeDev){
+import { 
+    VITE_PRODUCTION,
+    VITE_URL_CHECK_CODE_PROD,
+    VITE_URL_CHECK_CODE_DEV
+} from './envAdapters'
 
-    const URL = prod === 'true' ? urlCheckCodeProd : urlCheckCodeDev
+export default async function confirmCode(code){
+
+    const URL = VITE_PRODUCTION === 'true' ? VITE_URL_CHECK_CODE_PROD : VITE_URL_CHECK_CODE_DEV
 
     const res = await axios.post(URL,{code:code},{
         withCredentials:true

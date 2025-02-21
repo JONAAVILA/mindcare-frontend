@@ -1,9 +1,14 @@
 import axios from "axios"
 
-export default async function adminLogin(values,prod,urlAdminLoginProd,urlAdminLoginDev){
+import { 
+    VITE_PRODUCTION,
+    VITE_URL_ADMIN_LOGIN_PROD,
+    VITE_URL_ADMIN_LOGIN_DEV
+} from './envAdapters'
+
+export default async function adminLogin(values){
     
-    const URL = prod === 'true' ? urlAdminLoginProd : urlAdminLoginDev
-    console.log('url',urlAdminLoginProd)
+    const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_LOGIN_PROD : VITE_URL_ADMIN_LOGIN_DEV
 
     try {
         const admin = {
