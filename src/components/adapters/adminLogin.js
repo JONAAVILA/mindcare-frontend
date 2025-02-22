@@ -4,7 +4,7 @@ import {
     VITE_PRODUCTION,
     VITE_URL_ADMIN_LOGIN_PROD,
     VITE_URL_ADMIN_LOGIN_DEV
-} from './envAdapters'
+} from './envAdapters.astro'
 
 export default async function adminLogin(values){
     

@@ -4,7 +4,7 @@ import {
     VITE_PRODUCTION,
     VITE_URL_CHECK_CODE_PROD,
     VITE_URL_CHECK_CODE_DEV
-} from './envAdapters'
+} from './envAdapters.astro'
 
 export default async function confirmCode(code){
 

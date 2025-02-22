@@ -4,7 +4,7 @@ import {
     VITE_PRODUCTION,
     VITE_URL_ADMIN_SIGNIN_PROD,
     VITE_URL_ADMIN_SIGNIN_DEV
-} from './envAdapters'
+} from './envAdapters.astro'
 
 export default async function postAdmin(values){
     

@@ -4,7 +4,7 @@ import {
     VITE_PRODUCTION,
     VITE_URL_REFRESH_PROD,
     VITE_URL_REFRESH_DEV
-} from './envAdapters'
+} from './envAdapters.astro'
 
 export default async function refresh(password){
     

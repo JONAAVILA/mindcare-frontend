@@ -1,40 +1,11 @@
 ---
 import App from "../components/react/App";
 import Layout from "../layouts/Layout.astro";
-
-const VITE_PRODUCTION = import.meta.env.VITE_PRODUCTION
-const VITE_URL_SEND_CODE_PROD = import.meta.env.VITE_URL_SEND_CODE_PROD
-const VITE_URL_CHECK_CODE_PROD = import.meta.env.VITE_URL_CHECK_CODE_PROD
-const VITE_URL_ADMIN_LOGIN_PROD = import.meta.env.VITE_URL_ADMIN_LOGIN_PROD
-const VITE_URL_ADMIN_SIGNIN_PROD = import.meta.env.VITE_URL_ADMIN_SIGNIN_PROD
-const VITE_URL_REFRESH_PROD = import.meta.env.VITE_URL_REFRESH_PROD
-
-const VITE_URL_SEND_CODE_DEV = import.meta.env.VITE_URL_SEND_CODE_DEV
-const VITE_URL_CHECK_CODE_DEV = import.meta.env.VITE_URL_CHECK_CODE_DEV
-const VITE_URL_ADMIN_LOGIN_DEV = import.meta.env.VITE_URL_ADMIN_LOGIN_DEV
-const VITE_URL_ADMIN_SIGNIN_DEV = import.meta.env.VITE_URL_ADMIN_SIGNIN_DEV
-const VITE_URL_REFRESH_DEV = import.meta.env.VITE_URL_REFRESH_DEV
-
-const VITE_CLOUD_NAME = import.meta.env.VITE_CLOUD_NAME
 ---
 
 <Layout tittle="Mindcare - Admin" >
     <section>
-        <App
-            client:only="react" 
-            prod={VITE_PRODUCTION}
-            urlSendCodeProd={VITE_URL_SEND_CODE_PROD}
-            urlCheckCodeProd={VITE_URL_CHECK_CODE_PROD}
-            urlAdminLoginProd={VITE_URL_ADMIN_LOGIN_PROD}
-            urlAdminSigninProd={VITE_URL_ADMIN_SIGNIN_PROD}
-            urlRefreshProd={VITE_URL_REFRESH_PROD}
-            urlSendCodeDev={VITE_URL_SEND_CODE_DEV}
-            urlCheckCodeDev={VITE_URL_CHECK_CODE_DEV}
-            urlAdminLoginDev={VITE_URL_ADMIN_LOGIN_DEV}
-            urlAdminSigninDev={VITE_URL_ADMIN_SIGNIN_DEV}
-            urlRefreshDev={VITE_URL_REFRESH_DEV}
-            cludName={VITE_CLOUD_NAME}
-        />
+        <App client:only="react">
     </section>
 </Layout>
 
@@ -46,5 +17,6 @@ const VITE_CLOUD_NAME = import.meta.env.VITE_CLOUD_NAME
         height: 100vh;
         width: 100%;
         margin: 0;
+        padding-block: 50px;
     }
 </style>

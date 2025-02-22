@@ -11,9 +11,6 @@ export const validateAdmin = Yup.object().shape({
         .max(50,'El apellido es un largo')
         .matches('^[a-zA-Z]+$','Formato inválido')
         .required('El apellido es requerido'),
-    seller:Yup.string()
-        .min(8)
-        .max(16),
     password:Yup.string()
         .min(8,'Contraseña demasiado corta')
         .max(40,'Contraseña demasiado larga')
@@ -70,11 +67,11 @@ export const validateCode = Yup.object().shape({
 })
 
 export const validateBlog = Yup.object().shape({
-    tittle:Yup.string()
+    heading:Yup.string()
         .min(10,'Título demasiado corto')
         .max(60,'Título demasiado largo')
         .required('Título requerido'),
-    subtittle:Yup.string()
+    subheading:Yup.string()
         .min(10,'Subtítulo demasiado corto')
         .max(120,'Subtítulo demasiado largo')
         .required('Subtítulo requerido'),

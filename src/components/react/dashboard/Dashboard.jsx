@@ -4,9 +4,16 @@ import { validateBlog } from '../../../utils/validate'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import { useState } from 'react'
 import updateImage from '../../adapters/updateImage'
+import Alert from '../modals/alert/Alert'
+import postBlogs from '../../adapters/postBlogs'
 
 const Dashboard = ()=>{
     const [file, setFile] = useState(null);
+    const [alert, setAlert] = useState('')
+
+    const handleAlert = ()=>{
+        setAlert('')
+    }
 
     const handleFileChange = (event) => {
         setFile(event.target.files[0])
@@ -16,19 +23,19 @@ const Dashboard = ()=>{
     // useEffect(()=>{
     //     login()
     // },[])
+    console.log('se mota componente')
     const formik = useFormik({
         initialValues:{
-            tittle:'',
-            subtittle:'',
+            heading:'',
+            subheading:'',
             description:'',
-            login:'',
-            password:''
         },
         validationSchema:validateBlog,
-        onSubmit: async () => {
+        onSubmit: async (values) => {
             try {
+                console.log('aca entra')
                 if (!file) {
-                    alert('Por favor selecciona una imagen');
+                    setAlert('Por favor selecciona una imagen');
                     return;
                 }
 
@@ -36,21 +43,25 @@ const Dashboard = ()=>{
                 formData.append('file', file)
                 formData.append('upload_preset', 'preset_mindcare');
 
-                const response = await updateImage(formData)
+                const urlImage = await updateImage(formData)
+                if(!urlImage) setAlert('Error al guardar la imágen 🤦‍♂️')
+                alert('se guardo con exito')
 
-                console.log('Respuesta del servidor:', response);
-                alert('Publicación creada con éxito');
+                const postBlog = await postBlogs(values,urlImage)
+                setAlert(postBlog)
+                
                 formik.resetForm()
                 setFile(null)
             } catch (error) {
                 console.error('Error al crear la publicación:', error);
-                alert('Ocurrió un error al subir la publicación');
+                setAlert('Ocurrió un error al subir la publicación');
             }
         }
     })
 
     return(
         <section className='dashboard_section' >
+            {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             <div className='dashboard_box_inputs' >
                 <h3>Publicar en blog</h3>
                 <div>
@@ -60,28 +71,28 @@ const Dashboard = ()=>{
                         <input
                             className='input_blog'
                             type="text"
-                            id='tittle'
-                            name='tittle'
-                            value={formik.values.tittle}
+                            id='heading'
+                            name='heading'
+                            value={formik.values.heading}
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             placeholder="TÍTULO"
                         />
                         <div className='box_dashboard_errors' >
-                            {formik.touched.tittle && formik.errors.tittle && <p>{formik.errors.tittle}</p>}
+                            {formik.touched.heading && formik.errors.heading && <p>{formik.errors.heading}</p>}
                         </div>
                         <input
                             className='input_blog'
                             type="text"
-                            id='subtittle'
-                            name='subtittle'
-                            value={formik.values.subtittle}
+                            id='subheading'
+                            name='subheading'
+                            value={formik.values.subheading}
                             onBlur={formik.handleBlur}
                             onChange={formik.handleChange}
                             placeholder="SUBTÍTULO"
                         />
                         <div className='box_dashboard_errors' >
-                            {formik.touched.subtittle && formik.errors.subtittle && <p>{formik.errors.subtittle}</p>}
+                            {formik.touched.subheading && formik.errors.subheading && <p>{formik.errors.subheading}</p>}
                         </div>
                         <textarea
                             className='input_blog'

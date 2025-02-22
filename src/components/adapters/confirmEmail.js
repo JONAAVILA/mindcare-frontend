@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { 
     VITE_PRODUCTION,
-} from './envAdapters'
+} from './envAdapters.astro'
 
 export default async function confirmEmail(email){
     

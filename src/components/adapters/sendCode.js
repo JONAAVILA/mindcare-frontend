@@ -4,7 +4,7 @@ import {
     VITE_PRODUCTION,
     VITE_URL_SEND_CODE_PROD,
     VITE_URL_SEND_CODE_DEV
-} from './envAdapters'
+} from './envAdapters.astro'
 
 export default async function sendCode (){
 
