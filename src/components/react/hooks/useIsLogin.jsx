@@ -15,7 +15,7 @@ const useIsLogin = () => {
                     navigate('/admin/login')
                     return
                 }
-                if (parsedUser && parsedUser.values === null && !parsedUser.isValidateLogin) {
+                if (!parsedUser && parsedUser.values === null && !parsedUser.isValidateLogin) {
                     navigate('/admin/signin')
                     return
                 }
@@ -26,7 +26,7 @@ const useIsLogin = () => {
                 return
             }
         }
-        navigate('/admin/login')
+        navigate('/admin/signin')
         return
     }
 }
