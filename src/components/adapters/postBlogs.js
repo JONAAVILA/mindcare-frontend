@@ -1,8 +1,9 @@
 import axios from 'axios'
-import { VITE_URL_BLOG_POST } from './envAdapters.astro'
+
+const { PUBLIC_URL_BLOG_POST } = import.meta.env
 
 const postBlogs = async (values,urlImage)=>{
-    const URL = VITE_URL_BLOG_POST
+    const URL = PUBLIC_URL_BLOG_POST
 
     const post = {
         heading:values.heading,

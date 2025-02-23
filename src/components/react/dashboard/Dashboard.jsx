@@ -2,10 +2,11 @@ import { useFormik } from 'formik'
 import './dashboard.css'
 import { validateBlog } from '../../../utils/validate'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import updateImage from '../../adapters/updateImage'
 import Alert from '../modals/alert/Alert'
 import postBlogs from '../../adapters/postBlogs'
+import useIsLogin from '../hooks/useIsLogin'
 
 const Dashboard = ()=>{
     const [file, setFile] = useState(null);
@@ -18,12 +19,13 @@ const Dashboard = ()=>{
     const handleFileChange = (event) => {
         setFile(event.target.files[0])
     };
-    // const login = useIsLogin()
 
-    // useEffect(()=>{
-    //     login()
-    // },[])
-    console.log('se mota componente')
+    const login = useIsLogin()
+
+    useEffect(()=>{
+        login()
+    },[])
+
     const formik = useFormik({
         initialValues:{
             heading:'',
@@ -45,7 +47,7 @@ const Dashboard = ()=>{
 
                 const urlImage = await updateImage(formData)
                 if(!urlImage) setAlert('Error al guardar la imágen 🤦‍♂️')
-                alert('se guardo con exito')
+                setAlert('se guardo con exito')
 
                 const postBlog = await postBlogs(values,urlImage)
                 setAlert(postBlog)

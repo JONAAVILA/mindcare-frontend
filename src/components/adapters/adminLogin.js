@@ -1,14 +1,14 @@
 import axios from "axios"
 
-import { 
-    VITE_PRODUCTION,
-    VITE_URL_ADMIN_LOGIN_PROD,
-    VITE_URL_ADMIN_LOGIN_DEV
-} from './envAdapters.astro'
+const { 
+    PUBLIC_PRODUCTION,
+    PUBLIC_URL_ADMIN_LOGIN_PROD,
+    PUBLIC_URL_ADMIN_LOGIN_DEV
+} = import.meta.env
 
 export default async function adminLogin(values){
     
-    const URL = VITE_PRODUCTION === 'true' ? VITE_URL_ADMIN_LOGIN_PROD : VITE_URL_ADMIN_LOGIN_DEV
+    const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_URL_ADMIN_LOGIN_PROD : PUBLIC_URL_ADMIN_LOGIN_DEV
 
     try {
         const admin = {

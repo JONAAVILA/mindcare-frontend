@@ -1,12 +1,12 @@
 import axios from "axios";
 
-import { 
-    VITE_PRODUCTION,
-} from './envAdapters.astro'
+const { 
+    PUBLIC_PRODUCTION,
+} = import.meta.env
 
 export default async function confirmEmail(email){
     
-    // const URL = VITE_PRODUCTION === 'true' ? VITE_URL_CONFIRM_EMAIL_PRODUCTION : VITE_URL_CONFIRM_EMAIL_DEV
+    // const URL = PUBLIC_PRODUCTION === 'true' ? PUBLIC_URL_CONFIRM_EMAIL_PRODUCTION : PUBLIC_URL_CONFIRM_EMAIL_DEV
     
     const res = await axios.post(URL,email,{
         withCredentials: true
