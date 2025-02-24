@@ -35,7 +35,6 @@ const Dashboard = ()=>{
         validationSchema:validateBlog,
         onSubmit: async (values) => {
             try {
-                console.log('aca entra')
                 if (!file) {
                     setAlert('Por favor selecciona una imagen');
                     return;
@@ -47,10 +46,11 @@ const Dashboard = ()=>{
 
                 const urlImage = await updateImage(formData)
                 if(!urlImage) setAlert('Error al guardar la imágen 🤦‍♂️')
-                setAlert('se guardo con exito')
+
+                setAlert('La imágen se guardo con exito, estamos por terminar, guardando el post...🕒')
 
                 const postBlog = await postBlogs(values,urlImage)
-                setAlert(postBlog)
+                setAlert(`El post "${postBlog.heading}" se creó con exito!`)
                 
                 formik.resetForm()
                 setFile(null)

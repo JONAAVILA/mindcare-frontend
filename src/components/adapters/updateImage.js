@@ -5,8 +5,6 @@ const {
 } = import.meta.env
 
 const updateImage = async (formData)=>{
-
-    console.log('entro en el adapter',PUBLIC_CLOUD_NAME)
     const URL= `https://api.cloudinary.com/v1_1/${PUBLIC_CLOUD_NAME}/image/upload`
 
     const res = await axios.post(URL, formData, {

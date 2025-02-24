@@ -16,7 +16,6 @@ const postBlogs = async (values,urlImage)=>{
         withCredentials:true
     })
 
-    console.log('post', res.data)
     return res.data
 }
 export default postBlogs
