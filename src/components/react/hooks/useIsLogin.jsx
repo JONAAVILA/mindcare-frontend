@@ -26,7 +26,7 @@ const useIsLogin = () => {
                 return
             }
         }
-        navigate('/admin/signin')
+        navigate('/admin/login')
         return
     }
 }
