@@ -6,8 +6,7 @@ const useIsLogin = () => {
     return ()=>{
 
         const user = localStorage.getItem('user');
-        const parsedUser = JSON.parse(user);
-        console.log(parsedUser)
+        const parsedUser = JSON.parse(user);    
 
         if (user) {
             try {

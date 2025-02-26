@@ -1,0 +1,27 @@
+.box_card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 300px;
+    height: 150px;
+    border-bottom: solid 1px var(--grey-color);
+}
+.cardPreview_image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.box_card_info{
+    h1{
+        font-size: 1.1rem;
+        margin-bottom: 3px;
+    }
+    p{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+    }
+}

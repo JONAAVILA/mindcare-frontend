@@ -7,10 +7,13 @@ import updateImage from '../../adapters/updateImage'
 import Alert from '../modals/alert/Alert'
 import postBlogs from '../../adapters/postBlogs'
 import useIsLogin from '../hooks/useIsLogin'
+import Preview from '../preview/Preview'
+import LoadIcon from '../icons/loader/LoadIcon'
 
 const Dashboard = ()=>{
     const [file, setFile] = useState(null);
     const [alert, setAlert] = useState('')
+    const [loader,setLoader] = useState(false)
 
     const handleAlert = ()=>{
         setAlert('')
@@ -43,8 +46,10 @@ const Dashboard = ()=>{
                 const formData = new FormData();
                 formData.append('file', file)
                 formData.append('upload_preset', 'preset_mindcare');
-
+                
+                setLoader(!loader)
                 const urlImage = await updateImage(formData)
+                setLoader(false)
                 if(!urlImage) setAlert('Error al guardar la imágen 🤦‍♂️')
 
                 setAlert('La imágen se guardo con exito, estamos por terminar, guardando el post...🕒')
@@ -63,6 +68,9 @@ const Dashboard = ()=>{
 
     return(
         <section className='dashboard_section' >
+            <div className='dashboard_box_loader' >
+                {loader && <LoadIcon size={60} />}
+            </div>
             {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
             <div className='dashboard_box_inputs' >
                 <h3>Publicar en blog</h3>
@@ -108,6 +116,13 @@ const Dashboard = ()=>{
                         <div className='box_dashboard_errors' >
                             {formik.touched.description && formik.errors.description && <p>{formik.errors.description}</p>}
                         </div>
+                        <input 
+                            className='input_blog'
+                            type="file"
+                            id='image'
+                            name='image'
+                            onChange={handleFileChange}
+                        />
                         <div className='dashboard_box_button' >
                             <ButtonReact type='submit'>
                                 CREAR
@@ -115,14 +130,9 @@ const Dashboard = ()=>{
                         </div>
                     </form>
                 </div>
-                <input 
-                        className='input_blog'
-                        type="file"
-                        id='image'
-                        name='image'
-                        onChange={handleFileChange}
-                    />
-                <div></div>
+            </div>
+            <div>
+                <Preview/>
             </div>
         </section>
     )

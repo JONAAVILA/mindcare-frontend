@@ -1,8 +1,8 @@
 import './buttonReact.css'
 
-const ButtonReact = ({children})=>{
+const ButtonReact = ({children,handleClick})=>{
     return(
-        <button className='button_react' >
+        <button className='button_react' onClick={handleClick} >
             {children}
         </button>
     )

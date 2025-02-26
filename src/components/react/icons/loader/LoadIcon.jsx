@@ -5,7 +5,7 @@ const LoadIcon = ({size})=>{
         <l-bouncy
             size={size}
             speed="1.75"
-            color="black" 
+            color="#636363" 
         />
     )
 }
