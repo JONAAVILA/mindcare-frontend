@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro'
+const path = Astro.url.pathname.toUpperCase()
+---
+
+<Layout tittle='Errror 404' >
+    <section>
+        <div>
+            <h1>ERROR 404</h1>
+            <h2>LA DIRECCIÓN "{path}" NO EXISTE 🤷‍♂️</h2>
+        </div>
+    </section>
+</Layout>
+
+<style>
+    section{
+        display: grid;
+        place-items: center;
+        text-align: center;
+        height: 100vh;
+        width:100%;
+    }
+    h2{
+        font-size: 2rem;
+    }
+</style>
