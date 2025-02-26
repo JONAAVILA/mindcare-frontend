@@ -1,5 +1,6 @@
 ---
 import ButtonCustom from "./buttons/ButtonCustom.astro";
+import HeardIcon from "./icons/HeardIcon.astro";
 ---
 
 <script>
@@ -26,6 +27,12 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
         <ButtonCustom path="/about">
             ABOUT
         </ButtonCustom>
+        <a href="/">
+            <HeardIcon 
+                color='grey'
+                size='35'
+                />
+        </a>
         <ButtonCustom path="/doctores">
             DOCTORES
         </ButtonCustom>
@@ -94,11 +101,16 @@ import ButtonCustom from "./buttons/ButtonCustom.astro";
                 height: 200px;
                 width: 100%;
             }
+            a{
+                position: absolute;
+                left: 10px;
+                top: 5px;
+            }
             #tab{
                 z-index: 10;
                 position: absolute;
                 right: 10px;
-                top: 10px;
+                top: 20px;
                 cursor: pointer;
                 display: flex;
                 stroke-width: 1px;
