@@ -4,14 +4,23 @@ import CardPreview from "../cardPreview/CardPreview"
 import ButtonReact from "../buttons/buttonReact/ButtonReact"
 import './preview.css'
 import LoadIcon from "../icons/loader/LoadIcon"
+import setStorage from "../../../utils/setStorage"
+import { useNavigate } from "react-router-dom"
 
 const Preview = ()=>{
     const [data,setData] = useState([])
     const [loader,setLoader] = useState(false)
+    const navigate = useNavigate()
     
     const handleData = async ()=>{
         setLoader(!loader)
         const res = await getBlogs()
+        console.log(res)
+        if(res === 'validate user'){
+            setStorage('clear')
+            navigate('/admin/login')
+            return
+        }
         setData([...res].reverse())
         setLoader(false)
     }
