@@ -1,14 +1,14 @@
 ---
+import getBlogs from "../components/adapters/getBlogs";
 import Banner from "../components/Banner.astro";
 import BlogCard from "../components/cards/BlogCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+const data = [...await getBlogs()].reverse()
 ---
 
 <Layout tittle="Mindcare - Blog" >
     <article>
-        <!-- <div class="blog_box_banner" >
-            <Banner message="PROXIMAMENTE" />
-        </div> -->
         <div class="blog_box_header">
             <header>
                 <h1>Manteneté informado</h1>
@@ -22,11 +22,19 @@ import Layout from "../layouts/Layout.astro";
                 <h2>ACÁ PODÉS VER LAS NOTICIAS RELACIONADAS A LA SALUD Y A MINDCARE, PARA NO PERDERTE NADA ¡SUSCRIBITE!</h2>
             </div>
         </div>
-        <div class="box_card_blog" >
-            <BlogCard client:load />
-            <BlogCard client:load />
-            <BlogCard/>
-        </div>
+        
+        {data.length > 0 ? (
+            <div class="box_card_blog">
+                {data.map(itemBlog => (
+                    <BlogCard data={itemBlog} />
+                ))}
+            </div>
+        ) : (
+            <div class="blog_box_banner">
+                <Banner message="PROXIMAMENTE" />
+            </div>
+        )}
+        
     </article>
 </Layout>
 

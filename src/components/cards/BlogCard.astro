@@ -1,24 +1,32 @@
 ---
-//const { data } = Astro.props
-const data = {
-    image:'https://cdn.prod.website-files.com/6340630bc206e31341770199/666c109316a99547b357ff88_664db8514792d58509a97787_6340630cc206e3b22a772e90_61670b0ac994c3226bf78115_psicologo-psicoterapeuta-e-psichiatra-che-differenza-ce.jpeg',
-    heading:'Analisis shodasdoajsdkajdkjaksdjaksjk',
-    subheading:'subtitulo'
-}
+const { data } = Astro.props
 ---
 <script>
-    const heading = document.querySelector('h3')
-    const maxLegnth = 25
-    
-    heading?.addEventListener('mouseenter',()=>{
-        heading?.textContent?.length > maxLegnth && heading.classList.add('slide')
-    })
+    const heading = [...document.getElementsByClassName('heading')]
+    const subheading = [...document.getElementsByClassName('subheading')]
+    const headingLength = 25
+    const subheadingLength = 70
+
+    if(heading){
+        heading.map(element => {
+            if(element.textContent && element.textContent.length > headingLength){
+                element.classList.add('slide')
+            }
+        });
+    }
+    if(subheading){
+        subheading.map(element => {
+            if(element.textContent && element.textContent.length > subheadingLength){
+                element.classList.add('slide')
+            }
+        });
+    }
 </script>
 
-<a href="">
+<a href={`/${data.id}`}>
     <div class="container_heading" >    
-        <h3>{data.heading}</h3>
-        <h2>{data.subheading}</h2>
+        <h3 class="heading" >{data.heading}</h3>
+        <h2 class="subheading" >{data.subheading}</h2>
     </div>
     <picture>
         <img src={data.image} alt={data.heading} >
@@ -39,6 +47,7 @@ const data = {
         width: 370px;
         height: 60px;
         overflow: hidden;
+        padding-left: 5px;
     }
     picture{
         width: 200px;
