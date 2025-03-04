@@ -29,7 +29,7 @@ const { data } = Astro.props
         <h2 class="subheading" >{data.subheading}</h2>
     </div>
     <picture>
-        <img style="view-transition-name: image_detail;"  src={data.image} alt={data.heading} >
+        <img style=`view-transition-name:image-${data.id}-detail;`  src={data.image} alt={data.heading} >
     </picture>
 </a>
 
@@ -58,7 +58,6 @@ const { data } = Astro.props
         height: 100%;
         border-radius: 150px;
         object-fit: cover;
-        view-transition-name: 'image-detail';
     }
     h3{
         white-space: nowrap;

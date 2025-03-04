@@ -7,7 +7,7 @@ import Layout from "../layouts/Layout.astro";
 const data = [...await getBlogs()].reverse()
 ---
 
-<Layout tittle="Mindcare - Blog" >
+<Layout client:load tittle="Mindcare - Blog" >
     <article>
         <div class="blog_box_header">
             <header>

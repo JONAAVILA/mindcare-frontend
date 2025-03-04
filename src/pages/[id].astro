@@ -3,22 +3,55 @@ import getBlogById from "../components/adapters/getBlogById"
 import Layout from "../layouts/Layout.astro"
 
 const { id } = Astro.params
+console.log(id)
 
 const data = await getBlogById(id)
-console.log('data', data)
 ---
 
 <Layout tittle={data.heading} >
     <section>
-        <picture>
-            <img style="view-transition-name: image_detail;" src={data.image} alt="">
-        </picture>
-        <h4>{data.heading}</h4>
+        <article>
+            <picture>
+                <img style=`view-transition-name:image-${data.id}-detail;` src={data.image} alt="">
+            </picture>
+            <div class="box_article" >
+                <header>
+                    <p>creado: {data.createdAt.split('T').slice(0,1)}</p>
+                    <h1>{data.heading}</h1>
+                    <h4>{data.subheading}</h4>
+                </header>
+                <div>
+                    <p>{data.description}</p>
+                </div>
+            </div>
+        </article>
     </section>
 </Layout>
 
 <style>
+    section{
+        width: 100%;
+        min-height: 100vh;
+        display: grid;
+        align-items: center;
+        padding-top: 100px;
+        justify-content: center;
+    }
+    article{
+        display: flex;
+        gap: 30px;
+    }
+    .box_article{
+        width: 400px;
+    }
+    h1{
+        font-size: 2rem;
+    }
     img{
-        width: 200px;
+        width: 400px;
+        height: 400px;
+        border-radius: 50px;
+        object-fit: cover;
+        border: solid 4px var(--primary-color);
     }
 </style>
