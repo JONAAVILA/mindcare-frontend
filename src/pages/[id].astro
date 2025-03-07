@@ -8,7 +8,7 @@ console.log(id)
 const data = await getBlogById(id)
 ---
 
-<Layout tittle={data.heading} >
+<Layout server:defer tittle={data.heading} >
     <section>
         <article>
             <picture>
