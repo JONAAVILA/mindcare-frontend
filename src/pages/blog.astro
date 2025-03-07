@@ -4,11 +4,12 @@ import Banner from "../components/Banner.astro";
 import BlogCard from "../components/cards/BlogCard.astro";
 import Layout from "../layouts/Layout.astro";
 
-const data = [...await getBlogs()].reverse()
+const blogs = await getBlogs()
+const data = blogs.reverser()
 ---
 
-<Layout server:defer tittle="Mindcare - Blog" >
-    <article>
+<Layout title="Mindcare - Blog" >
+    <article >
         <div class="blog_box_header">
             <header>
                 <h1>Manteneté informado</h1>
@@ -26,7 +27,7 @@ const data = [...await getBlogs()].reverse()
         {data.length > 0 ? (
             <div class="box_card_blog">
                 {data.map(itemBlog => (
-                    <BlogCard data={itemBlog} />
+                    <BlogCard {...itemBlog} />
                 ))}
             </div>
         ) : (
