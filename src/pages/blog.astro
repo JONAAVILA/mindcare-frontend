@@ -5,7 +5,7 @@ import BlogCard from "../components/cards/BlogCard.astro";
 import Layout from "../layouts/Layout.astro";
 
 const blogs = await getBlogs()
-const data = blogs.reverser()
+const data = blogs.reverse()
 ---
 
 <Layout title="Mindcare - Blog" >
