@@ -27,7 +27,7 @@ const data = blogs.reverse()
         {data.length > 0 ? (
             <div class="box_card_blog">
                 {data.map(itemBlog => (
-                    <BlogCard {...itemBlog} />
+                    <BlogCard data={itemBlog} />
                 ))}
             </div>
         ) : (
