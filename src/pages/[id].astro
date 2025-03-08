@@ -7,30 +7,25 @@ const { id } = Astro.params
 const data = await getBlogById(id)
 ---
 
-{data ? (
-    <Layout server:defer tittle={data.heading}>
-        <section>
-            <article>
-                <picture>
-                    <img style={`view-transition-name:image-${data.id}-detail;`} src={data.image} alt="" />
-                </picture>
-                <div class="box_article">
-                    <header>
-                        <p>creado: {data.createdAt.split('T')[0]}</p>
-                        <h1>{data.heading}</h1>
-                        <h4>{data.subheading}</h4>
-                    </header>
-                    <div>
-                        <p>{data.description}</p>
-                    </div>
+<Layout server:defer tittle={data.heading} >
+    <section>
+        <article>
+            <picture>
+                <img style=`view-transition-name:image-${data.id}-detail;` src={data.image} alt="">
+            </picture>
+            <div class="box_article" >
+                <header>
+                    <p>creado: {data.createdAt.split('T').slice(0,1)}</p>
+                    <h1>{data.heading}</h1>
+                    <h4>{data.subheading}</h4>
+                </header>
+                <div>
+                    <p>{data.description}</p>
                 </div>
-            </article>
-        </section>
-    </Layout>
-) : (
-    <p>El blog no pudo ser cargado. Intenta más tarde.</p>
-)}
-
+            </div>
+        </article>
+    </section>
+</Layout>
 
 <style>
     section{
