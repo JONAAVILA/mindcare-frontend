@@ -7,7 +7,7 @@ const { id } = Astro.params
 const data = await getBlogById(id)
 ---
 
-<Layout title={data.heading} >
+<Layout title=`${data.heading}`>
     <section>
         <article>
             <picture>
