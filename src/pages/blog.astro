@@ -2,14 +2,16 @@
 import getBlogs from "../components/adapters/blog/getBlogs";
 import Banner from "../components/Banner.astro";
 import BlogCard from "../components/cards/BlogCard.astro";
+import LoadIcon from "../components/react/icons/loader/LoadIcon";
 import Layout from "../layouts/Layout.astro";
 
 const blogs = await getBlogs()
 const data = blogs.reverse()
 ---
 
-<Layout fallback="cargando...." title="Mindcare - Blog" >
+<Layout title="Mindcare - Blog" >
     <article >
+        <LoadIcon size={30} slot="fallback" />
         <div class="blog_box_header">
             <header>
                 <h1>Manteneté informado</h1>
