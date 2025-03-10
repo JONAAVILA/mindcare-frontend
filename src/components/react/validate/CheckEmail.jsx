@@ -2,7 +2,7 @@ import { useFormik } from "formik"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { validateEmail } from "../../../utils/validate"
-import confirmEmail from "../../adapters/confirmEmail"
+import confirmEmail from "../../adapters/validations/confirmEmail"
 
 const CheckEmail = ()=>{
     const [loader, setloader] = useState(false)

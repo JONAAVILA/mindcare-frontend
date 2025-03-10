@@ -1,7 +1,7 @@
 import { validateAdmin } from '../../../utils/validate'
 import { useFormik } from 'formik'
 import { useState } from 'react'
-import postAdmin from '../../adapters/postAdmin'
+import postAdmin from '../../adapters/admin/postAdmin'
 import setStorage from '../../../utils/setStorage'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import Alert from '../modals/alert/Alert'

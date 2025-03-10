@@ -1,5 +1,5 @@
 import { useState } from "react"
-import getBlogs from "../../adapters/getBlogs"
+import getBlogs from "../../adapters/blog/getBlogs"
 import CardPreview from "../cardPreview/CardPreview"
 import ButtonReact from "../buttons/buttonReact/ButtonReact"
 import './preview.css'
