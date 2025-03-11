@@ -13,7 +13,7 @@ const updateImage = async (formData)=>{
         }
     })
 
-    return res.data.url
+    return res.data.url.replace(/^http:\/\//i, "https://")
 }
 
 export default updateImage
