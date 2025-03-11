@@ -3,10 +3,13 @@ import { useFormik } from 'formik'
 import { useState } from 'react'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import Alert from '../modals/alert/Alert'
+import sendConsult from '../../../adapters/users/sendConsult'
 import './consultForm.css'
+import LoadIcon from '../icons/loader/LoadIcon'
 
 const ConsultForm = ()=>{
     const [alert, setAlert] = useState('')
+    const [loader,setLoader] = useState(false)
     
     const formik = useFormik({
         initialValues:{
@@ -16,7 +19,13 @@ const ConsultForm = ()=>{
             message:''
         },
         validationSchema:validateConsult,
-        onSubmit:''
+        onSubmit: async (values)=>{
+            setLoader(!loader)
+            const res = await sendConsult(values)
+            console.log(res)
+            setLoader(false)
+            setAlert(res)
+        }
     })
 
     const handleAlert = ()=>{
@@ -26,6 +35,9 @@ const ConsultForm = ()=>{
     return(
         <>
             {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
+            <div className='load_icon_form' >
+                {loader && <LoadIcon/>}
+            </div>
             <form
                 className='consult_form'
                 onSubmit={formik.handleSubmit}
