@@ -2,6 +2,18 @@
 import Layout from "../layouts/Layout.astro"
 ---
 
+<script>
+	const navbar = document.getElementById('navbar')
+
+	window.addEventListener('scroll',()=>{
+		if(window.scrollY > 10){
+			navbar?.classList.add('scrolled')
+		}else {
+			navbar?.classList.remove('scrolled')
+		}
+	})
+</script>
+
 <Layout title="Mindcare - Sobre Mindcare" >
     <section>
         <div class="about_box_image" >

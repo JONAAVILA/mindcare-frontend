@@ -6,6 +6,18 @@ import MetaButton from "../components/buttons/MetaButton.astro";
 import WhatsappButton from "../components/buttons/WhatsappButton.astro";
 ---
 
+<script>
+	const navbar = document.getElementById('navbar')
+
+	window.addEventListener('scroll',()=>{
+		if(window.scrollY > 10){
+			navbar?.classList.add('scrolled')
+		}else {
+			navbar?.classList.remove('scrolled')
+		}
+	})
+</script>
+
 <Layout title="Mindcare - Contacto" >
     <section>
         <div class="contact_box_info" >
