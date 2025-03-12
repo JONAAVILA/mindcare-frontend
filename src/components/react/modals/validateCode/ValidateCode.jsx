@@ -4,10 +4,10 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { validateCode } from '../../../../utils/validate'
 import setStorage from '../../../../utils/setStorage'
-import confirmCode from '../../../adapters/validations/confirmCode'
 import LoadIcon from '../../icons/loader/LoadIcon'
-import refresh from '../../../adapters/admin/refresh'
 import ButtonReact from '../../buttons/buttonReact/ButtonReact'
+import confirmCode from '../../../../adapters/validations/confirmCode'
+import refresh from '../../../../adapters/admin/refresh'
 
 const ValidateCode = ({
     password,

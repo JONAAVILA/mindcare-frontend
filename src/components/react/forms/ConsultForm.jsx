@@ -24,6 +24,7 @@ const ConsultForm = ()=>{
             const res = await sendConsult(values)
             console.log(res)
             setLoader(false)
+            formik.resetForm()
             setAlert(res)
         }
     })

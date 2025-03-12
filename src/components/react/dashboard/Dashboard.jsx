@@ -3,12 +3,12 @@ import './dashboard.css'
 import { validateBlog } from '../../../utils/validate'
 import ButtonReact from '../buttons/buttonReact/ButtonReact'
 import { useEffect, useState } from 'react'
-import updateImage from '../../adapters/blog/updateImage'
 import Alert from '../modals/alert/Alert'
-import postBlogs from '../../adapters/blog/postBlogs'
 import useIsLogin from '../hooks/useIsLogin'
 import Preview from '../preview/Preview'
 import LoadIcon from '../icons/loader/LoadIcon'
+import updateImage from '../../../adapters/blog/updateImage'
+import postBlogs from '../../../adapters/blog/postBlogs'
 
 const Dashboard = ()=>{
     const [file, setFile] = useState(null);

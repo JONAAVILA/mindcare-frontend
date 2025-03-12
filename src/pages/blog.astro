@@ -1,86 +1,19 @@
 ---
-import getBlogs from "../adapters/blog/getBlogs";
-import Banner from "../components/Banner.astro";
-import BlogCard from "../components/cards/BlogCard.astro";
+import BlogList from "../components/BlogList.astro";
 import Layout from "../layouts/Layout.astro";
-
-const blogs = await getBlogs()
-const data = blogs.reverse()
 ---
 
 <Layout title="Mindcare - Blog" >
     <article >
-        <div class="blog_box_header">
-            <header>
-                <h1>Manteneté informado</h1>
-                <img
-                    class="blog_arrow_icon" 
-                    src="icons/arrow.svg" 
-                    alt="mindcare icon arrow"
-                >
-            </header>
-            <div>
-                <h2>ACÁ PODÉS VER LAS NOTICIAS RELACIONADAS A LA SALUD Y A MINDCARE, PARA NO PERDERTE NADA ¡SUSCRIBITE!</h2>
-            </div>
-        </div>
-        
-        {data.length > 0 ? (
-            <div class="box_card_blog">
-                {data.map(itemBlog => (
-                    <BlogCard data={itemBlog} />
-                ))}
-            </div>
-        ) : (
-            <div class="blog_box_banner">
-                <Banner message="PROXIMAMENTE" />
-            </div>
-        )}
-        
+        <BlogList/>
     </article>
 </Layout>
 
 <style>
     article{
         position: relative;
-        display:flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        padding-top: 120px;
-        gap: 40px;
-        height: 100vh;
-    }
-    .blog_box_header{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    header{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 12px;
-    }
-    h1{
-        font-size: 4rem;
-    }
-    .blog_arrow_icon{
-        width: 50px;
-        transform: rotate(90deg);
-    }
-    .blog_box_banner{
-        z-index: 10;
-        position: fixed;
-        left: 50%;
-        top: 60%;
-        transform: translate(-50%,50%);
-    }
-    .box_card_blog{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 15px;
+        display:grid;
+        place-items: center;
+        margin-block: 50px;
     }
 </style>

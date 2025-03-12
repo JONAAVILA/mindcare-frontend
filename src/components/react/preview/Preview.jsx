@@ -1,11 +1,11 @@
 import { useState } from "react"
-import getBlogs from "../../adapters/blog/getBlogs"
 import CardPreview from "../cardPreview/CardPreview"
 import ButtonReact from "../buttons/buttonReact/ButtonReact"
 import './preview.css'
 import LoadIcon from "../icons/loader/LoadIcon"
 import setStorage from "../../../utils/setStorage"
 import { useNavigate } from "react-router-dom"
+import getBlogs from "../../../adapters/blog/getBlogs"
 
 const Preview = ()=>{
     const [data,setData] = useState([])
