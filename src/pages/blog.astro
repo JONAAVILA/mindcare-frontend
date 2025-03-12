@@ -3,18 +3,6 @@ import BlogList from "../components/BlogList.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
-<script>
-	const navbar = document.getElementById('navbar')
-
-	window.addEventListener('scroll',()=>{
-		if(window.scrollY > 10){
-			navbar?.classList.add('scrolled')
-		}else {
-			navbar?.classList.remove('scrolled')
-		}
-	})
-</script>
-
 <Layout title="Mindcare - Blog" >
     <article >
         <BlogList/>
