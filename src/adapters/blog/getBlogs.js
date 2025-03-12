@@ -6,7 +6,7 @@ const getBlogs = async ()=>{
 
     const response = await axios.get(PUBLIC_URL_GET_BLOGS)
 
-    return response.data.url.replace(/^http:\/\//i, "https://")
+    return response.data
 }
 
 export default getBlogs
