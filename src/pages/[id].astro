@@ -15,7 +15,7 @@ const data = await getBlogById(id)
             </picture>
             <div class="box_article" >
                 <header>
-                    <p>creado: {data.createdAt.split('T').slice(0,1)}</p>
+                    <p>creado: {data.createdAt?.split('T').slice(0,1)}</p>
                     <h1>{data.heading}</h1>
                     <h4>{data.subheading}</h4>
                 </header>

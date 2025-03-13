@@ -1,22 +1,10 @@
 ---
-import ButtonCustom from "./buttons/ButtonCustom.astro";
+import Suscribe from '../components/react/forms/suscribeForm/Suscribe'
 ---
 
 <section>
     <div class="info_container" >
-        <div class="info_aling" >
-            <div class="info_aling info_box_text" >
-                <h3>suscribite</h3>
-                <input
-                type="text"
-                placeholder="EMAIL"
-                >
-                <ButtonCustom>
-                    ENVIAR
-                </ButtonCustom>
-            </div>
-            <p class="info_text" >DEJANOS TU EMAIL PARA RECIBIR INFORMACION SOBRE NUESTROS SERVICIOS, ES GRATIS!</p>
-        </div>
+        <Suscribe client:only="react" />
         <div class="info_aling" >
             <p class="info_text text_rigth" >MIRA NUESTRA CARTILLA DE PROFESIONALES</p>
             <div class="info_aling info_box_text" >
