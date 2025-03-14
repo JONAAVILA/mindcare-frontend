@@ -1,11 +1,11 @@
 import { useFormik } from 'formik'
 import { useState } from 'react'
-import ButtonReact from '../buttons/buttonReact/ButtonReact'
-import Alert from '../modals/alert/Alert'
 import sendConsult from '../../../adapters/users/sendConsult'
 import './consultForm.css'
-import LoadIcon from '../icons/loader/LoadIcon'
 import { validateConsult } from '../../../../utils/validate'
+import ButtonReact from '../../buttons/buttonReact/ButtonReact'
+import Alert from '../../modals/alert/Alert'
+import LoadIcon from '../../icons/loader/LoadIcon'
 
 const ConsultForm = ()=>{
     const [alert, setAlert] = useState('')
