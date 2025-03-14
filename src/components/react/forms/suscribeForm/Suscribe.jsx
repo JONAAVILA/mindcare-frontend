@@ -9,7 +9,7 @@ import ButtonReact from "../../buttons/buttonReact/ButtonReact"
 
 const Suscribe = ()=>{
     const [alert,setAlert] = useState('')
-    // const [loader,setLoader] = useState(false)
+    const [loader,setLoader] = useState(false)
 
     const formik = useFormik({
         initialValues:{
@@ -17,9 +17,11 @@ const Suscribe = ()=>{
         },
         validationSchema:validateEmail,
         onSubmit: async (values)=>{
-            // setLoader(!loader)
+            setLoader(!loader)
             const res = await subNewsletter(values)
-            setAlert(res)
+            setLoader(false)
+            console.log('form',res)
+            setAlert(`${res}`)
         } 
     })
 
@@ -33,8 +35,8 @@ const Suscribe = ()=>{
                 <div className="box_suscribe suscribe_box_text" > 
                     <div className="box_suscribe_loader" >
                         {alert && <Alert handleAlert={handleAlert} >{alert}</Alert>}
-         
                     </div>
+                    {loader && <LoadIcon/>}
                     <h3>suscribite</h3>
                     <form
                         onSubmit={formik.handleSubmit}
