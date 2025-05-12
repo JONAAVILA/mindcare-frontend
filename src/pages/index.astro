@@ -6,7 +6,33 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<Landing />
+	<!-- <Landing />
 	<Banner message="CENTRO DE SALUD MENTAL" />
-	<Info/>
+	<Info/> -->
+	<div class="container_susp" >
+		<div class="box_susp" >
+			<h3>SUSPENDIDO POR FALTA DE PAGO</h3>
+			<h4>COMUNIQUESE CON SOPORTE</h4>
+		</div>
+	</div>
 </Layout>
+
+<style>
+	.container_susp{
+		display: grid;
+		place-items: center;
+		height: 100vh;
+	}
+	.box_susp{
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		h3{
+			margin: 0;
+		}
+		h4{
+			margin: 0;
+		}
+	}
+</style>
